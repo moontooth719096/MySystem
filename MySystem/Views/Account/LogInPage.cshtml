@@ -1,0 +1,29 @@
+﻿@model MySystem.Models.Account.UserData
+@{
+    ViewBag.Title = "LogInPage";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<h2>登入頁面</h2>
+@using (@Html.BeginForm("LogInPage", "Account", FormMethod.Post))
+{ 
+  <div class="row">
+      <div class="panel panel-default">
+          
+          <table>
+              <tr>
+                  <td>
+                      @Html.Label("帳號")
+                      @Html.TextBoxFor(m=>m.UserAccount)
+                  </td>
+                  <td>
+                      @Html.Label("密碼")
+                      @Html.TextBoxFor(m => m.UserPassWord)
+                  </td>
+              </tr>
+          </table>
+          <input type="submit" value="登入"/>
+      </div>
+  </div>
+}    
+

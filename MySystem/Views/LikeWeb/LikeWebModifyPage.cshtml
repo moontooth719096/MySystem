@@ -1,0 +1,52 @@
+﻿@model MySystem.ViewModels.LikeWeb.WebDataViewModel
+
+@{
+}
+
+<html>
+<body>
+    <!-- Contents -->
+
+    <form class="form-horizontal">
+        @using (Html.BeginForm("LikeWebModifyPage", "LikeWeb", FormMethod.Post))
+        {
+        <table class="table table-hover">
+            <thead>
+                <tr><td><p>@ViewBag.Title<p></td></tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>
+                            <label>網頁名稱</label>
+                        </td>
+                        <td>
+                            @Model.WebName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>網頁類型</label>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                @Html.DropDownListFor(m => m.WebTypeNeme, Model._WebTypeList, new { @class = "form-control" })
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>網頁連結</label>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.WebURL, new { style = " width:400px;" })
+                        </td>
+                    </tr>
+                
+            <tbody>
+        </table>
+        <button type="submit" class="btn btn-success">確定</button>
+        }
+     </form>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+﻿@model MySystem.ViewModels.LikeWeb.WebDataViewModel
+
+@{
+    ViewBag.Title = "我的最愛網頁新增頁面";
+}
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <!-- Contents -->
+    @using (Html.BeginForm("LikeWebAddPage", "LikeWeb",FormMethod.Post))
+    {
+    <form class="form-horizontal" >
+        <div class="row">
+            <div class="col-sm-1">網頁名稱</div>
+            <div class="col-sm-1">@Html.TextBoxFor(model => model.WebName)</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">網頁類型</div>
+            <div class="col-sm-2">@Html.DropDownListFor(m => m.WebTypeNeme, Model._WebTypeList, new { @class = "form-control" })</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">網頁連結</div>
+            <div class="col-sm-7">@Html.TextBoxFor(model => model.WebURL, new { style = " width:400px;" })</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                <button type="submit" class="btn btn-success" onclick="return confirm('確定要新增嗎?');">確定新增</button>
+            </div>
+       </div>
+   </form>
+   }
+</body>
+
+</html>

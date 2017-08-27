@@ -1,0 +1,113 @@
+﻿@model MySystem.Models.Account.UserData
+
+@{
+    ViewBag.Title = "CreatAccountPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>新增使用者</h2>
+@using (@Html.BeginForm("CreatAccountPage", "Account", FormMethod.Post))
+{
+    <div class="row">
+        <div class="panel panel-default">
+
+            <table class="table table-hover">
+                <tr>
+                    <td>
+                        <p class="text-warning">*@Html.Label("帳號")</p>
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserAccount)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <p class="text-warning">*</p>@Html.Label("密碼")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserPassWord, new { type = "PassWord" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="text-warning">*</p>@Html.Label("再輸入一次密碼")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserPassWord, new { type = "PassWord" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("生日")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => x.UserBirthday, new {@placeholder = "請點選(選擇日期)",@class="from-control",data_date_format = "yyyy-mm-dd",@readonly = "readonlly" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="text-warning">*</p>@Html.Label("Email")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserEmail)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("電話號碼")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserPhoneNumber)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="text-warning">*</p>@Html.Label("性別")
+                    </td>
+                    <td>
+                        @Html.RadioButton("UserGender", true, new { Value = "male" })
+                        @Html.Label("男性")
+                        @Html.RadioButton("UserGender", false, new { Value = "female" })
+                        @Html.Label("女性")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("地址")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserAddress)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Email")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserEmail)
+                    </td>
+                </tr>
+
+            </table>
+            <input type="submit" value="確認送出" />
+        </div>
+    </div>
+}    
+@section Scripts{
+<script src="~/Scripts/bootstrap.min.js"></script>    
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>    
+<script type="text/javascript">
+    $("#UserBirthday").datepicker({
+        language: 'fr',
+        weekStart: 1,
+        todayBtn: 0,
+        autoclose: 0,
+        pockTime: false,//要有小時 分鐘時為True
+        todayHighlight: 1,
+        startView: 2,
+        nubVuew: 2,
+        foreceParse:0
+    })
+    </script>  
+
+}
