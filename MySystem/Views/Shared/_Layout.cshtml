@@ -33,19 +33,23 @@
     </style>
 </head>
 <body>
-    <header>
-        @Html.Partial("_HeadPage")
-    </header>
+    
     <div class="container-fluid">
         <div class="row content">
+            <header>
+                @Html.Partial("_HeadPage")
+            </header>
             <div class="col-sm-2 sidenav">
                 @Html.Partial("_SidePage")
             </div>
-            <div class="col-sm-10">
-                <!-- Contents -->
-                @RenderBody()
-            </div>
-        </div>
+            
+                <div class="col-sm-10">
+                    <div class="container">
+                        <!-- Contents -->
+                        @RenderBody()
+                    </div>
+                </div>
+         </div>
     </div>
     <footer class="container-fluid text-center">
         <p>Footer Text</p>

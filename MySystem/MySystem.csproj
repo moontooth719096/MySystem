@@ -183,6 +183,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\LikeWeb\LikeWebController.cs" />
+    <Compile Include="Controllers\MainPage\MainPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -386,6 +387,7 @@
     <Content Include="Views\LikeWeb\LikeWebModifyPage.cshtml" />
     <Content Include="Views\Shared\_SidePage.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\MainPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
