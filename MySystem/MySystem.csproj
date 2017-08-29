@@ -182,12 +182,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\Fumction\FunctionController.cs" />
     <Compile Include="Controllers\LikeWeb\LikeWebController.cs" />
     <Compile Include="Controllers\MainPage\MainPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\UserData.cs" />
+    <Compile Include="Models\Function\MainFunction.cs" />
     <Compile Include="Models\LikeWeb\WebDataDB.cs" />
     <Compile Include="ViewModels\LikeWeb\WebDataViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebTypeDataDB.cs" />
