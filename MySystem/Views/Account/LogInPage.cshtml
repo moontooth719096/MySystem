@@ -3,36 +3,38 @@
     ViewBag.Title = "LogInPage";
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
-
-<h2>登入頁面</h2>
-@using (@Html.BeginForm("LogInPage", "Account", FormMethod.Post))
-{ 
-  <div class="row">
-      <div class="panel panel-default">
-          <div class="panel-heading">登入</div>
-          <div class="panel-body">
-              <div class="form-group row">
-                  <div class="col-xs-3">
-                      <label class="control-label">帳號:</label>
-                      @Html.TextBoxFor(m => m.UserAccount, new { @class = "form-control", placeholder = "Enter Account" })
-                  </div>
-              </div>
-              <div class="form-group row">
-                  <div class="col-xs-3">
-                      <label class="control-label">密碼:</label>
-                      @Html.TextBoxFor(m => m.UserPassWord, new { type = "password", @class = "form-control", placeholder = "Enter password" })
-                  </div>
-              </div>
-          </div>
-          <div class="panel-footer">
-              <a href="~/MainPage/Index" class="btn btn-success btn-sm">
-                  <span class="glyphicon glyphicon-ok-circle"></span> Login
-              </a>
-              <a href="~/Account/CreatAccountPage" class="btn btn-success btn-sm">
-                  <span class="glyphicon glyphicon-user"></span> Sing
-              </a>
-          </div>
-     </div>
-  </div>
-}    
-
+<div class="container">
+    <div class="col-md-4 col-md-offset-4">
+        <h2>登入頁面</h2>
+        @using (@Html.BeginForm("LogInPage", "Account", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">登入</div>
+                    <div class="panel-body">
+                        <div class="form-group row ">
+                            <div class="col-xs-10 col-xs-offset-1">
+                                <label class="control-label">帳號:</label>
+                                @Html.TextBoxFor(m => m.UserAccount, new { @class = "form-control", placeholder = "Enter Account" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-10 col-xs-offset-1">
+                                <label class="control-label">密碼:</label>
+                                @Html.TextBoxFor(m => m.UserPassWord, new { type = "password", @class = "form-control", placeholder = "Enter password" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-center">
+                        <a href="~/MainPage/Index" class="btn btn-success btn-lg">
+                            <span class="glyphicon glyphicon-ok-circle"></span> Login
+                        </a>
+                        <a href="~/Account/CreatAccountPage" class="btn btn-success btn-lg">
+                            <span class="glyphicon glyphicon-user"></span> Sing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
