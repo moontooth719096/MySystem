@@ -189,8 +189,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\UserData.cs" />
-    <Compile Include="Models\Function\MainFunction.cs" />
+    <Compile Include="Models\Function\MainFunctionDB.cs" />
     <Compile Include="Models\LikeWeb\WebDataDB.cs" />
+    <Compile Include="ViewModels\Function\MainFunctionViewModel.cs" />
     <Compile Include="ViewModels\LikeWeb\WebDataViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebTypeDataDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

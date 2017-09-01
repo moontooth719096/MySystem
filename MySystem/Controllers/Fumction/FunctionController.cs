@@ -14,7 +14,7 @@ namespace MySystem.Controllers.Fumction
 
         public ActionResult MainFunctionPage()
         {
-            MainFunction model = new MainFunction();
+            MainFunctionDB model = new MainFunctionDB();
 
             return View(model);
         }

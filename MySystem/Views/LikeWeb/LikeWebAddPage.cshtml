@@ -3,13 +3,7 @@
 @{
     ViewBag.Title = "我的最愛網頁新增頁面";
 }
-<html>
-<head>
-    <title>@ViewBag.Title</title>
-</head>
-
-<body>
-    <h2>新增使用者</h2>
+    <h2>新增我的最愛網頁</h2>
     <!-- Contents -->
     @using (Html.BeginForm("LikeWebAddPage", "LikeWeb", FormMethod.Post))
     {
@@ -44,6 +38,3 @@
             </div>
         </div>
     }
-</body>
-
-</html>
