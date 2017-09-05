@@ -7,7 +7,7 @@ namespace MySystem.ViewModels.Function
 {
     public class MainFunctionViewModel
     {
-        /// <summary>
+            /// <summary>
         /// 功能代號
         /// </summary>
         public string MainFunctionID { get; set; }
@@ -19,7 +19,5 @@ namespace MySystem.ViewModels.Function
         /// 功能類別
         /// </summary>
         public string MainFunctionType { get; set; }
-
-
     }
 }

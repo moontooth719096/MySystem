@@ -1,7 +1,7 @@
 ﻿@model MySystem.Models.Account.UserData
 
 @{
-    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>新增使用者</h2>
 @using (@Html.BeginForm("CreatAccountPage", "Account", FormMethod.Post))
@@ -49,10 +49,8 @@
               <div class="form-group row">
                   <div class="col-xs-3">
                       <label class="control-label"><a class="text-warning">*</a>性別:</label>
-                      @Html.RadioButtonFor(m => m.UserGender,1, new { Value = "male"})
-                      @Html.Label("男性")
-                      @Html.RadioButtonFor(m => m.UserGender,0, new { Value = "female"})
-                      @Html.Label("女性")
+                      @Html.RadioButtonFor(m => m.UserGender,"男性")男性
+                      @Html.RadioButtonFor(m => m.UserGender,"女性")女性
                   </div>                  
               </div>
               <div class="form-group row">

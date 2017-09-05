@@ -185,16 +185,23 @@
     <Compile Include="Controllers\Fumction\FunctionController.cs" />
     <Compile Include="Controllers\LikeWeb\LikeWebController.cs" />
     <Compile Include="Controllers\MainPage\MainPageController.cs" />
+    <Compile Include="Controllers\SidePage\SidePageController.cs" />
+    <Compile Include="Controllers\Test\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\UserData.cs" />
+    <Compile Include="Models\Function\SubFunctionDB.cs" />
     <Compile Include="Models\Function\MainFunctionDB.cs" />
     <Compile Include="Models\LikeWeb\WebDataDB.cs" />
+    <Compile Include="Models\Test\Class1.cs" />
+    <Compile Include="ViewModels\Function\FunctionTypeViewModel.cs" />
+    <Compile Include="ViewModels\Function\SubFunctionViewModel.cs" />
     <Compile Include="ViewModels\Function\MainFunctionViewModel.cs" />
     <Compile Include="ViewModels\LikeWeb\WebDataViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebTypeDataDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\SidePage\SidePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -391,6 +398,7 @@
     <Content Include="Views\Shared\_SidePage.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\MainPage\Index.cshtml" />
+    <Content Include="Views\Test\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
