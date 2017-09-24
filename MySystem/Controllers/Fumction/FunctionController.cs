@@ -26,18 +26,24 @@ namespace MySystem.Controllers
             message = model.addMainFunction(model.MainFunctionName, model.MainFunctionType);
             return RedirectToAction("MainFunctionAddPage");
         }
-
         public ActionResult SubFunctionAddPage()
         {
             SubFunctionViewModel model = new SubFunctionViewModel();
-
+            string message = String.Empty;
+            message = model.getWebType(); //取得網業類型
             return View(model);
         }
+        [HttpPost]
+        public ActionResult SubFunctionAddPage(SubFunctionViewModel model)
+        {
+            string message = String.Empty;
 
+            return RedirectToAction("SubFunctionAddPage");
+        }
         public ActionResult FunctionTypeAddPage()
         {
             FunctionTypeViewModel model = new FunctionTypeViewModel();
-
+            
             return View(model);
         }
 

@@ -43,7 +43,7 @@ namespace MySystem.Models.Function
         }
         #endregion
 
-        #region 新增主功能
+        #region 新增子功能
         /// <summary>
         /// 新增子功能
         /// </summary>

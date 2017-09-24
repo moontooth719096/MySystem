@@ -189,6 +189,7 @@
     <Compile Include="Controllers\Fumction\FunctionController.cs" />
     <Compile Include="Controllers\LikeWeb\LikeWebController.cs" />
     <Compile Include="Controllers\MainPage\MainPageController.cs" />
+    <Compile Include="Controllers\MusicPlayer\MusicPlayerController.cs" />
     <Compile Include="Controllers\SidePage\SidePageController.cs" />
     <Compile Include="Controllers\Test\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,6 +199,7 @@
     <Compile Include="Models\Function\SubFunctionDB.cs" />
     <Compile Include="Models\Function\MainFunctionDB.cs" />
     <Compile Include="Models\LikeWeb\WebDataDB.cs" />
+    <Compile Include="Models\MusicPlayer\PlayListModel.cs" />
     <Compile Include="Models\Test\Class1.cs" />
     <Compile Include="ViewModels\Function\FunctionTypeViewModel.cs" />
     <Compile Include="ViewModels\Function\SubFunctionViewModel.cs" />
@@ -205,6 +207,7 @@
     <Compile Include="ViewModels\LikeWeb\WebDataViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebTypeDataDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MusicPlayer\MusicPlayerViewModel.cs" />
     <Compile Include="ViewModels\SidePage\SidePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -269,6 +272,16 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="CSS\MusicPlayer\Image\fastforward.png" />
+    <Content Include="CSS\MusicPlayer\Image\mute.png" />
+    <Content Include="CSS\MusicPlayer\Image\pause.png" />
+    <Content Include="CSS\MusicPlayer\Image\play.png" />
+    <Content Include="CSS\MusicPlayer\Image\playing.png" />
+    <Content Include="CSS\MusicPlayer\Image\repeat.png" />
+    <Content Include="CSS\MusicPlayer\Image\rewind.png" />
+    <Content Include="CSS\MusicPlayer\Image\shuffle.png" />
+    <Content Include="CSS\MusicPlayer\Image\volume.png" />
+    <Content Include="CSS\MusicPlayer\stylesheets\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -357,6 +370,7 @@
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\bootstrap-datetimepicker-build.less" />
     <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="CSS\MusicPlayer\Image\Thumbs.db" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
@@ -366,6 +380,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -381,6 +396,8 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Views\MusicPlayer\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -405,6 +422,7 @@
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\Function\MainFunctionAddPage.cshtml" />
     <Content Include="Views\Function\SubFunctionAddPage.cshtml" />
+    <Content Include="Views\MusicPlayer\MusicPlayerPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

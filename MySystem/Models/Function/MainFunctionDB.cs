@@ -22,7 +22,8 @@ namespace MySystem.Models.Function
         {
             SqlConnection myConn = new SqlConnection(ConnetStr);
             DataTable dt = new DataTable();
-            string sql = "SELECT * FROM MainFunctionData";
+            string sql = @"SELECT * FROM MainFunctionData
+                           Order By MainFunctionID";
             SqlCommand cmd = new SqlCommand(sql, myConn);
             try
             {

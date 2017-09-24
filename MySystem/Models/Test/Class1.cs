@@ -55,7 +55,7 @@ namespace MySystem.Models.Test
                 string HTMLCut = strResult.Substring(first + 9, last - first - 9);
                 strResult = HTMLCut;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 
             }
