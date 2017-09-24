@@ -98,4 +98,6 @@ C:\MySystem\MySystem\bin\zh-Hans\System.Spatial.resources.dll
 C:\MySystem\MySystem\bin\zh-Hant\System.Spatial.resources.dll
 C:\MySystem\MySystem\obj\Debug\MySystem.dll
 C:\MySystem\MySystem\obj\Debug\MySystem.pdb
-C:\Mysystem\MySystem\obj\Debug\MySystem.csprojResolveAssemblyReference.cache
+C:\MySystem\MySystem\obj\Debug\MySystem.csprojResolveAssemblyReference.cache
+C:\MySystem\MySystem\bin\AutoMapper.dll
+C:\MySystem\MySystem\bin\AutoMapper.xml

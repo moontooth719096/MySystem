@@ -10,6 +10,7 @@
     <!-- Contents -->
 @using (Html.BeginForm("Test", "Test", FormMethod.Post))
         {
+    @Html.Hidden("Active")
     <form class="form-horizontal">
         
             <table class="table table-hover">
@@ -17,41 +18,24 @@
                     <tr><td><p>@ViewBag.Title<p></td></tr>
                 </thead>
                 <tbody>
-                    @foreach (var data in Model.DataList)
-                    { 
-                        <tr>
-                            <td>
-                                <label>名稱</label>
-                            </td>
-                            <td>
-                                @data.Name
-                            </td>
-                            <td>
-                                <label>狀態</label>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    @Html.RadioButton(data.Name, "蘋果", new { @checked = data.Stust == "蘋果"?true:false })蘋果
-                                    @Html.RadioButton(data.Name, "香蕉", new { @checked = data.Stust == "香蕉" ? true : false })香蕉
-                                    @Html.RadioButton(data.Name, "葡萄", new { @checked = data.Stust == "葡萄" ? true : false })葡萄
-                                </div>
-                            </td>
-                        </tr>
-                    }
                     
                 <tbody>
             </table>
-        <input type="button" class="btn btn-success" id="btnReg" disabled="disabled" value="確定">
+        <input type="submit" onclick="btn_D(1)" class="btn btn-success" value="確定">
         
     </form>
         }
-    <h2>106年05-06月</h2> <table width="100%" border="0" cellspacing="1" cellpadding="0" summary="統一發票中獎號碼"> <caption>統一發票</caption> <tr> <th scope="col">獎別</th> <th scope="col">中獎號碼</th> </tr> <tr style="display: special"> <td class="title">特別獎</td> <td><span class="t18Red">99768846</span> <br />同期統一發票收執聯8位數號碼與特別獎號碼相同者獎金1,000萬元</td> </tr> <tr> <td class="title">特獎</td> <td><span class="t18Red">83660478</span> <br />同期統一發票收執聯8位數號碼與特獎號碼相同者獎金200萬元</td> </tr> <tr> <td class="title">頭獎</td> <td><span class="t18Red">70628612、87596250、97294175</span> <br />同期統一發票收執聯8位數號碼與頭獎號碼相同者獎金20萬元</td> </tr> <tr> <td class="title">二獎</td> <td>同期統一發票收執聯末7 位數號碼與頭獎中獎號碼末7 位相同者各得獎金4 萬元</td> </tr> <tr> <td class="title">三獎</td> <td>同期統一發票收執聯末6 位數號碼與頭獎中獎號碼末6 位相同者各得獎金1 萬元</td> </tr> <tr> <td class="title">四獎</td> <td>同期統一發票收執聯末5 位數號碼與頭獎中獎號碼末5 位相同者各得獎金4 千元</td> </tr> <tr> <td class="title">五獎</td> <td>同期統一發票收執聯末4 位數號碼與頭獎中獎號碼末4 位相同者各得獎金 1 千元</td> </tr> <tr> <td class="title">六獎</td> <td>同期統一發票收執聯末3 位數號碼與 頭獎中獎號碼末3 位相同者各得獎金 2 百元	</td> </tr> <tr style="display: addition"> <td class="title">增開六獎</td> <td><span class="t18Red">904</span> <br />同期統一發票收執聯末3位數號碼與增開六獎號碼相同者各得獎金2百元</td> </tr> </table> <p class="date">領獎期間自106年08月06日起至106年11月06日止</p> </div> <div id="area2" style="display: none;"> <h2 id="tabTitle"><span>統一發票號碼獎中獎號碼</span> | <a href="/lastNumber.html">無實體電子發票專屬獎中獎號碼</a></h2> <h2>106年03-04月</h2> <table width="100%" border="0" cellspacing="1" cellpadding="0" summary="統一發票中獎號碼"> <caption>統一發票</caption> <tr> <th scope="col">獎別</th> <th scope="col">中獎號碼</th> </tr> <tr style="display: oldSpecial"> <td class="title">特別獎</td> <td><span class="t18Red">74748874</span> <br />同期統一發票收執聯8位數號碼與特別獎號碼相同者獎金1,000萬元</td> </tr> <tr> <td class="title">特獎</td> <td><span class="t18Red">82528918</span> <br />同期統一發票收執聯8位數號碼與特獎號碼相同者獎金200萬元</td> </tr> <tr> <td class="title">頭獎</td> <td><span class="t18Red">07836485、13410946、96152286</span> <br />同期統一發票收執聯8位數號碼與頭獎號碼相同者獎金20萬元</td> </tr> <tr> <td class="title">二獎</td> <td>同期統一發票收執聯末7 位數號碼與頭獎中獎號碼末7 位相同者各得獎金4 萬元</td> </tr> <tr> <td class="title">三獎</td> <td>同期統一發票收執聯末6 位數號碼與頭獎中獎號碼末6 位相同者各得獎金1 萬元</td> </tr> <tr> <td class="title">四獎</td> <td>同期統一發票收執聯末5 位數號碼與頭獎中獎號碼末5 位相同者各得獎金4 千元</td> </tr> <tr> <td class="title">五獎</td> <td>同期統一發票收執聯末4 位數號碼與頭獎中獎號碼末4 位相同者各得獎金 1 千元</td> </tr> <tr> <td class="title">六獎</td> <td>同期統一發票收執聯末3 位數號碼與 頭獎中獎號碼末3 位相同者各得獎金 2 百元	</td> </tr> <tr style="display: oldAddition"> <td class="title">增開六獎</td> <td><span class="t18Red">996</span> <br />同期統一發票收執聯末3位數號碼與增開六獎號碼相同者各得獎金2百元</td> </tr> </table>
+    @using(Html.BeginForm())
+    {
+        @Html.Hidden("Active")
+        <input type="submit" onclick="btn_D(2)" class="btn btn-success" value="確定">
+    }
 </body>
 
 </html>
 
 <script type="text/JavaScript">
-    var MyCount = 10;
+    var MyCount = 0;
     var intervalID;
     function CountDown() {
         var btnReg = document.getElementById("btnReg");
@@ -68,4 +52,13 @@
         }
     }
     intervalID = setInterval("CountDown()", 1000);
+</script>
+
+<script type="text/JavaScript">
+    function btn_D(Type) {
+        if (Type == 1)
+            document.getElementById('Active').value = "Add";
+        if (Type == 2)
+            document.getElementById('Active').value = "modify";
+    }
 </script>

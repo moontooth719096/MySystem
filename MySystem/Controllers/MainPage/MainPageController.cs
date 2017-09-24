@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MySystem.Controllers.MainPage
+namespace MySystem.Controllers
 {
     public class MainPageController : Controller
     {

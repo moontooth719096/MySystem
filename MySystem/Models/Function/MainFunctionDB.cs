@@ -102,7 +102,7 @@ namespace MySystem.Models.Function
             SqlConnection myConn = new SqlConnection(ConnetStr);
             myConn.Open();
             //先查詢目前筆數
-            string sql = "SELECT COUNT(MainFunctID) FROM MainFunctionData";
+            string sql = "Select COUNT(MainFunctionID) From MainFunctionData";
             SqlCommand cmd = new SqlCommand(sql, myConn);
             try
             {

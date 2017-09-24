@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MySystem.Controllers.SidePage
+namespace MySystem.Controllers
 {
     public class SidePageController : Controller
     {

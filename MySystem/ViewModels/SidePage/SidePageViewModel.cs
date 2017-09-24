@@ -40,7 +40,14 @@ namespace MySystem.ViewModels.Function
         //取得子功能清單
         public void getSubFunctionList()
         {
-            SubFunctionDB subfunctionDB = new SubFunctionDB();
+            SubFunctionViewModel Data = new SubFunctionViewModel();
+            Data.SubFunctionID = "0";
+            Data.SubFunctionENName = "LikeWeb";
+            Data.SubFunctionCNName = "我的最愛網頁";
+            Data.SubFunctionURL = "/LikeWeb/LikeWebMainPage";
+            Data.SubFunctionType = "3";
+            SubFunctionList.Add(Data);
+            /*SubFunctionDB subfunctionDB = new SubFunctionDB();
             DataTable MainFunctionDT = new DataTable();
             MainFunctionDT = subfunctionDB.QuerySubFunctionData();
             foreach (DataRow dr in MainFunctionDT.Rows)
@@ -52,7 +59,7 @@ namespace MySystem.ViewModels.Function
                 Data.SubFunctionURL = dr["SubFunctionURL"].ToString();
                 Data.SubFunctionType = dr["SubFunctionType"].ToString();
                 SubFunctionList.Add(Data);
-            }
+            }*/
         }
     }
 }

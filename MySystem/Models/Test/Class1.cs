@@ -13,7 +13,7 @@ namespace MySystem.Models.Test
         public string Name { get; set;}
         public string Stust { get; set; }
         public string strResult { get; set; }
-
+        public string Active { get; set; }
         public List<Class1> DataList { get; set; }
 
         public void getData()

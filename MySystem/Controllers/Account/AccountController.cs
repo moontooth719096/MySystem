@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MySystem.Controllers.Account
+namespace MySystem.Controllers
 {
     public class AccountController : Controller
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MySystem.Controllers.Test
+namespace MySystem.Controllers
 {
     public class TestController : Controller
     {
@@ -22,7 +22,7 @@ namespace MySystem.Controllers.Test
         [HttpPost]
         public ActionResult Test(Class1 model)
         {
-            return View();
+            return View(model);
         }
 
     }

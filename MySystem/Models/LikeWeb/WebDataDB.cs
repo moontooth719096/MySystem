@@ -13,7 +13,6 @@ namespace MySystem.Models.LikeWeb
         private string ConnetStr = "Data Source=WIN-2ECGC9BV1OA;Initial Catalog=MySystemManagement;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
 
         #region 欄位
-        [Required]
         public string WebID { get; set; }
         public string WebName { get; set; }
         public string WebType { get; set; }

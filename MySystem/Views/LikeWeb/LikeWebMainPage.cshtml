@@ -4,33 +4,22 @@
     ViewBag.Title = "我的最愛網頁管理頁面";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<html>
-<head>
-    <title>@ViewBag.Title</title>
-</head>
+ <div class="row col-md-10 col-md-offset-1">
+    <div class="dropdown">
+        @Html.DropDownListFor(m => m.WebTypeNeme, Model._WebTypeList, new { @class = "form-control" })
+    </div>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+    <button type="button" class="btn" onclick="location.href ='LikeWebAddPage'">新增我的最愛網頁</button>
+</div>
 
-<body>
-
-    <h2>我的最愛清單</h2>
-    <div class="row">
+ <div class="row col-md-10 col-md-offset-1">
         <div class="panel panel-default">
-         <table>
-              <tr>
-                  <td>
-                      <div class="dropdown">
-                          @Html.DropDownListFor(m => m.WebTypeNeme, Model._WebTypeList, new { @class = "form-control" })
-                      </div>
-                      <div class="input-group">
-                          <input type="text" class="form-control" placeholder="Search" name="search">
-                          <div class="input-group-btn">
-                              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                          </div>
-                      </div>
-                      <button type="button" class="btn" onclick="location.href ='LikeWebAddPage'">新增我的最愛網頁</button>
-                  </td> 
-              </tr>
-          </table>
-         <div class="panel-body">
+            <div class="panel-body">
                 <!-- Contents -->
                 <table class="table table-hover">
                     <thead>
@@ -43,20 +32,17 @@
                     </thead>
                     <tbody>
                         @foreach (var data in Model.WebDataList)
-                        { 
-                          <tr>
-                              <td>@data.WebName</td>
-                              <td>@data.WebType</td>
-                              <td><a href=@data.WebURL>@data.WebURL</a></td>
-                              <td><button type="button" class="btn" onclick="location.href = 'LikeWebModifyPage?WebName=@data.WebName'">修改</button></td>
-                          </tr>
+                        {
+                            <tr>
+                                <td>@data.WebName</td>
+                                <td>@data.WebType</td>
+                                <td><a href=@data.WebURL>@data.WebURL</a></td>
+                                <td><button type="button" class="btn" onclick="location.href = 'LikeWebModifyPage?WebName=@data.WebName'">修改</button></td>
+                            </tr>
                         }
-                              
+
                     </tbody>
                 </table>
             </div>
         </div>
-    </div>
-</body>
-
-</html>
+</div>

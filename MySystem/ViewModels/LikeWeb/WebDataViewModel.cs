@@ -1,4 +1,5 @@
-﻿using MySystem.Models;
+﻿using AutoMapper;
+using MySystem.Models;
 using MySystem.Models.LikeWeb;
 using System;
 using System.Collections.Generic;
@@ -41,12 +42,20 @@ namespace MySystem.ViewModels.LikeWeb
         /// 儲存錯誤訊息
         /// </summary>
         public string Message;
-
+        class dda
+        {
+            public string WebID { get; set; }
+            public string WebName { get; set; }
+            public string WebType { get; set; }
+            public string WebURL { get; set; }
+        }
+        
         public void getWebdataDB()
         {
             try
             {
                 DataTable dt = _WebDataDB.getWebdata();
+
                 foreach (DataRow dr in dt.Rows)
                 {
                     WebDataDB wdm = new WebDataDB();

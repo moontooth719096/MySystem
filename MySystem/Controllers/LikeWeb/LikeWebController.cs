@@ -57,7 +57,6 @@ namespace MySystem.Controllers
         #endregion
 
         #region 修改頁面
-        [ValidateInput(false)]
         public ActionResult LikeWebModifyPage(string WebName)
         {
             ViewBag.Title = "編輯頁面";
