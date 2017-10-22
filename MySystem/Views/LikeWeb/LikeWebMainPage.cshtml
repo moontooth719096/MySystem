@@ -30,12 +30,12 @@
                             <th>動作</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tbTeams">
                         @foreach (var data in Model.WebDataList)
                         {
                             <tr>
                                 <td>@data.WebName</td>
-                                <td>@data.WebType</td>
+                                <td>@data.WebTypeNeme</td>
                                 <td><a href=@data.WebURL>@data.WebURL</a></td>
                                 <td><button type="button" class="btn" onclick="location.href = 'LikeWebModifyPage?WebName=@data.WebName'">修改</button></td>
                             </tr>
@@ -43,6 +43,25 @@
 
                     </tbody>
                 </table>
+                <button type="button" class="btn" onclick="getTeams()">來</button>
             </div>
         </div>
 </div>
+
+<script>
+    function getTeams() {
+        $.ajax({
+            type: 'POST',
+            url: '/LikeWeb/LikeWebMainPage1',
+            success: function (data) {
+                for (var j = 0; j < data.length; j++) {
+                    $("#tbTeams").append("<tr>"
+                            + "<td>" + data[j].WebName + "</td>"
+                            + "<td>" + data[j].WebType + "</td>"
+                            + "<td><a href=" + data[j].WebURL + ">" + data[j].WebURL + "</a></td>"
+                            + "</tr>");
+                }
+            }
+        })
+    };
+</script>

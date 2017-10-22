@@ -6,7 +6,7 @@
 body {
   font: 14px "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
  /* background: #333;*/
-  background: url(../../img/bg.jpg)  50%  50% / cover no-repeat fixed;
+  background: url(../Images/bg.jpg)  50%  50% / cover no-repeat fixed;
   color: #fff;
 }
 
@@ -122,22 +122,22 @@ a {
   height: 25px;
 }
 #player .ctrl .control .rewind {
-  background-image: url(../images/rewind.png);
+  background-image:url(../Image/rewind.png);
 }
 #player .ctrl .control .playback {
-  background-image: url(../images/play.png);
+  background-image: url(../Images/play.png);
 }
 #player .ctrl .control .playback.playing {
-  background-image: url(../images/pause.png);
+  background-image: url(../Images/pause.png);
 }
 #player .ctrl .control .fastforward {
-  background-image: url(../images/fastforward.png);
+  background-image: url(../Images/fastforward.png);
 }
 #player .ctrl .control .volume .mute {
-  background-image: url(../images/volume.png);
+  background-image: url(../Images/volume.png);
 }
 #player .ctrl .control .volume .mute.enable {
-  background-image: url(../images/mute.png);
+  background-image: url(../Images/mute.png);
 }
 #player .ctrl .control .volume .slider {
   margin-top: 11px;
@@ -156,7 +156,7 @@ a {
   background-position: center bottom;
 }
 #player .ctrl .progress .repeat {
-  background-image: url(../images/repeat.png);
+  background-image: url(../Images/repeat.png);
 }
 #player .ctrl .progress .repeat.once, #player .ctrl .progress .repeat.all {
   opacity: 1;
@@ -172,7 +172,7 @@ a {
   font-size: 8px;
 }
 <!--#player .ctrl .progress .shuffle {
-    background-image: url('~/CSS/MusicPlayer/images/shuffle.png');
+    background-image: url('~/CSS/MusicPlayer/Images/shuffle.png');
 }-->
 
 .slider {
@@ -269,7 +269,7 @@ a {
   color: #fff;
 }
 #playlist li.playing {
-  background: url(../images/playing.png) no-repeat 0 center;
+  background: url(../Images/playing.png) no-repeat 0 center;
   color: #fff;
   font-weight: bold;
 }

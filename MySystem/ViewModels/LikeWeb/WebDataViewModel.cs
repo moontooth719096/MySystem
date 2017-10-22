@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ConnetDB.MySystemManagement;
 using MySystem.Models;
 using MySystem.Models.LikeWeb;
 using System;
@@ -37,7 +38,7 @@ namespace MySystem.ViewModels.LikeWeb
         /// <summary>
         /// 儲存我的最愛網頁資訊
         /// </summary>
-        public List<WebDataDB> WebDataList = new List<WebDataDB>();
+        public List<WebDataModel> WebDataList = new List<WebDataModel>();
         /// <summary>
         /// 儲存錯誤訊息
         /// </summary>
@@ -58,10 +59,10 @@ namespace MySystem.ViewModels.LikeWeb
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    WebDataDB wdm = new WebDataDB();
+                    WebDataModel wdm = new WebDataModel();
                     wdm.WebID = dr["WebID"].ToString();
                     wdm.WebName = dr["WebName"].ToString();
-                    wdm.WebType = dr["WebType"].ToString();
+                    wdm.WebTypeNeme = dr["WebType"].ToString();
                     wdm.WebURL = dr["WebURL"].ToString();
                     WebDataList.Add(wdm);
                 }

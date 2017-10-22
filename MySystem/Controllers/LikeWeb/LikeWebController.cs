@@ -1,8 +1,9 @@
-﻿using MySystem.Models.LikeWeb;
-using MySystem.ViewModels.LikeWeb;
+﻿using MySystem.ViewModels.LikeWeb;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Linq;
+using ConnetDB.MySystemManagement;
+using MySystem.Models.LikeWeb;
 
 namespace MySystem.Controllers
 {
@@ -28,6 +29,13 @@ namespace MySystem.Controllers
             Session["WebDataList"] = model.WebDataList;
 
             return View(model);
+        }
+        public JsonResult LikeWebMainPage1()
+        {
+            WebDataViewModel model = new WebDataViewModel();
+            model.getWebdataDB();
+
+            return Json(model.WebDataList, "success");
         }
         #region 新增頁面
         public ActionResult LikeWebAddPage()
@@ -61,16 +69,16 @@ namespace MySystem.Controllers
         {
             ViewBag.Title = "編輯頁面";
             WebDataViewModel model = new WebDataViewModel();
-            model.WebDataList = Session["WebDataList"] as List<WebDataDB>;
+            model.WebDataList = Session["WebDataList"] as List<WebDataModel>;
             model.getWebType();
             if (!string.IsNullOrEmpty(model.Message))
             {
                 return View(model);
             }
-            WebDataDB SelectData = new WebDataDB();
+            WebDataModel SelectData = new WebDataModel();
             SelectData = model.WebDataList.Where(x => x.WebName == WebName).FirstOrDefault();
             model.WebName = SelectData.WebName;
-            model.WebTypeNeme = SelectData.WebType;
+            model.WebTypeNeme = SelectData.WebTypeNeme;
             model.WebURL = SelectData.WebURL;
             return View(model);
         }

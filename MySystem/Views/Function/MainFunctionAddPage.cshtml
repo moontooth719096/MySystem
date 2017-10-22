@@ -14,14 +14,13 @@
             <div class="panel-body">
                 <div class="form-group row">
                     <div class="col-xs-3">
-                        <label class="control-label"><a class="text-warning">*</a>主功能名稱:</label>
                         @Html.TextBoxFor(m => m.MainFunctionName, new { @class = "form-control", placeholder = "Enter WebName" })
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-xs-3">
                         <label class="control-label"><a class="text-warning">*</a>主功能類別:</label>
-                        @Html.DropDownListFor(m => m.MainFunctionType, Model._WebTypeList, new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.MainFunctionType, Model._WebTypeList, new { @class = "selectpicker"})
                     </div>
                 </div>
             </div>

@@ -37,7 +37,7 @@ namespace MySystem.Controllers
         public ActionResult SubFunctionAddPage(SubFunctionViewModel model)
         {
             string message = String.Empty;
-
+            model.addSubFunction();
             return RedirectToAction("SubFunctionAddPage");
         }
         public ActionResult FunctionTypeAddPage()

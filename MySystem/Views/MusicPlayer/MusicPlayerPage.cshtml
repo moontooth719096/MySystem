@@ -10,19 +10,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1, maximum-scale=1, user-scalable=no" />
-    <link href="~/CSS/MusicPlayer/stylesheets/style.css" rel="stylesheet" />
+    <link href="~\CSS/MusicPlayer/stylesheets/style.css" rel="stylesheet">
     <script src="~/Scripts/jquery-1.9.1.min.js"></script>
 </head>
 <body>
     @Html.HiddenFor(m=>m.PlayMusicList)
     <div id="background"></div>
+    @{var MusicData = Model.PlayMusicList.FirstOrDefault();}
     <div id="player">
         <div class="cover"></div>
         <div class="ctrl">
             <div class="tag">
-                <strong>Title</strong>
-                <span class="artist">Artist</span>
-                <span class="album">Album</span>
+                <strong>@MusicData.Title</strong>
+                <span class="artist">@MusicData.Artist</span>
+                <span class="album">@MusicData.Album</span>
             </div>
             <div class="control">
                 <div class="left">
@@ -45,33 +46,34 @@
                 <div class="timer left">0:00</div>
                 <div class="right">
                     <div class="repeat icon"></div>
-                    <img src="~/CSS/MusicPlayer/Image/shuffle.png">
                 </div>
             </div>
         </div>
+        <audio>
+            <source src="@MusicData.MP3">
+        </audio>
     </div>
-    <ul id="playlist"></ul>
-    <script src="~/Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+    
+    <ul id="playlist">
+        @foreach (var data in Model.PlayMusicList)
+        { 
+            <li>@data.Artist-@data.Title</li>
+        }
+    </ul>
 </body>
 </html>
 
 
-<script>
-    (function($){
+<!--<script>
+    (function($){        
         // Settings
         var repeat = localStorage.repeat || 0,
             shuffle = localStorage.shuffle || 'false',
             continous = true,
             autoplay = true;
-        var List = document.getElementById("PlayMusicList");
-        // Load playlist
-        for (var i = 0; i < @Model.PlayMusicList.Count; i++) {
-            var item = Model.PlayMusicList[i];
-            $('#playlist').append('<li>'+item.artist+' - '+item.title+'</li>');
-        }
 
         var time = new Date(),
-            currentTrack = shuffle === 'true' ? time.getTime() % playlist.length : 0,
+            currentTrack = shuffle === 'true' ? time.getTime() % @Model.PlayMusicList.Count() : 0,
             trigger = false,
             audio, timeout, isPlaying, playCounts;
 
@@ -194,12 +196,11 @@
         var afterLoad = function(){
             if (autoplay == true) play();
         }
-
         // Load track
         var loadMusic = function(i){
-            var item = playlist[i],
+            var item = PlayList[i],
                 newaudio = $('<audio>').html('<source src="'+item.mp3+'"><source src="'+item.ogg+'">').appendTo('#player');
-		
+
             $('.cover').html('<img src="'+item.cover+'" alt="'+item.album+'">');
             $('.tag').html('<strong>'+item.title+'</strong><span class="artist">'+item.artist+'</span><span class="album">'+item.album+'</span>');
             $('#playlist li').removeClass('playing').eq(i).addClass('playing');
@@ -270,4 +271,4 @@
             }
         });
     })(jQuery);
-</script>
+</script>-->

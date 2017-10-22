@@ -26,3 +26,6 @@
 /MySystem/obj
 /MySystem.v12.suo
 /Packages.dgml
+/ConnetDB/bin
+/ConnetDB/obj
+/ConnetDB/ConnetDB.csproj.user

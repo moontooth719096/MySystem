@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySystem", "MySystem\MySystem.csproj", "{C362EE2F-1060-4139-B695-F792D64058C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnetDB", "ConnetDB\ConnetDB.csproj", "{EE25CAA4-EB74-4CDA-ACA1-33B4E17CD965}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C362EE2F-1060-4139-B695-F792D64058C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C362EE2F-1060-4139-B695-F792D64058C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C362EE2F-1060-4139-B695-F792D64058C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE25CAA4-EB74-4CDA-ACA1-33B4E17CD965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE25CAA4-EB74-4CDA-ACA1-33B4E17CD965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE25CAA4-EB74-4CDA-ACA1-33B4E17CD965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE25CAA4-EB74-4CDA-ACA1-33B4E17CD965}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

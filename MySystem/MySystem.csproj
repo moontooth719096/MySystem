@@ -196,9 +196,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\UserData.cs" />
-    <Compile Include="Models\Function\SubFunctionDB.cs" />
     <Compile Include="Models\Function\MainFunctionDB.cs" />
-    <Compile Include="Models\LikeWeb\WebDataDB.cs" />
+    <Compile Include="Models\LikeWeb\WebDataModel.cs" />
     <Compile Include="Models\MusicPlayer\PlayListModel.cs" />
     <Compile Include="Models\Test\Class1.cs" />
     <Compile Include="ViewModels\Function\FunctionTypeViewModel.cs" />
@@ -272,16 +271,28 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="CSS\MusicPlayer\Image\fastforward.png" />
-    <Content Include="CSS\MusicPlayer\Image\mute.png" />
-    <Content Include="CSS\MusicPlayer\Image\pause.png" />
-    <Content Include="CSS\MusicPlayer\Image\play.png" />
-    <Content Include="CSS\MusicPlayer\Image\playing.png" />
-    <Content Include="CSS\MusicPlayer\Image\repeat.png" />
-    <Content Include="CSS\MusicPlayer\Image\rewind.png" />
-    <Content Include="CSS\MusicPlayer\Image\shuffle.png" />
-    <Content Include="CSS\MusicPlayer\Image\volume.png" />
-    <Content Include="CSS\MusicPlayer\stylesheets\style.css" />
+    <Content Include="CSS\MusicPlayer\Images\bg.jpg" />
+    <Content Include="CSS\MusicPlayer\Images\fastforward.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CSS\MusicPlayer\Images\mute.png" />
+    <Content Include="CSS\MusicPlayer\Images\pause.png" />
+    <Content Include="CSS\MusicPlayer\Images\play.png" />
+    <Content Include="CSS\MusicPlayer\Images\playing.png" />
+    <Content Include="CSS\MusicPlayer\Images\repeat.png" />
+    <Content Include="CSS\MusicPlayer\Images\rewind.png" />
+    <Content Include="CSS\MusicPlayer\Images\shuffle.png" />
+    <Content Include="CSS\MusicPlayer\Images\volume.png" />
+    <Content Include="CSS\MusicPlayer\img\1.jpg" />
+    <Content Include="CSS\MusicPlayer\img\2.jpg" />
+    <Content Include="CSS\MusicPlayer\img\3.jpg" />
+    <Content Include="CSS\MusicPlayer\img\4.jpg" />
+    <Content Include="CSS\MusicPlayer\img\5.jpg" />
+    <Content Include="CSS\MusicPlayer\img\6.jpg" />
+    <Content Include="CSS\MusicPlayer\img\7.jpg" />
+    <Content Include="CSS\MusicPlayer\img\8.jpg" />
+    <Content Include="CSS\MusicPlayer\img\bg.jpg" />
+    <Content Include="CSS\MusicPlayer\Images\stylesheets\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -370,7 +381,8 @@
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\bootstrap-datetimepicker-build.less" />
     <Content Include="Content\_bootstrap-datetimepicker.less" />
-    <Content Include="CSS\MusicPlayer\Image\Thumbs.db" />
+    <Content Include="CSS\MusicPlayer\Images\Thumbs.db" />
+    <None Include=".bin\node.cmd" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
@@ -398,7 +410,9 @@
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Views\MusicPlayer\index.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -431,6 +445,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConnetDB\ConnetDB.csproj">
+      <Project>{ee25caa4-eb74-4cda-aca1-33b4e17cd965}</Project>
+      <Name>ConnetDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

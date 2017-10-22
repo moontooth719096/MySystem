@@ -20,9 +20,18 @@ namespace MySystem.ViewModels.MusicPlayer
             data.Artist = "Christina Perri";
             data.Album = "A Thousand Years";
             data.Cover = "img/2.jpg";
-            data.MP3 = "mp3/Christina Perri - A Thousand Years.mp3";
+            data.MP3 = @"C:\Users\伍國維\Desktop\新增資料夾\music\mp3\Acoustic Collabo - You And Me, Flutter";
             data.Ogg ="";
             PlayMusicList = new List<PlayListModel>();
+            PlayMusicList.Add(data);
+
+            data = new PlayListModel();
+            data.Title = "云的舞蹈";
+            data.Artist = "云的舞蹈";
+            data.Album = "WanderLust";
+            data.Cover = "img/6.jpg";
+            data.MP3 = @"mp3/曹方 - 云的舞蹈.mp3";
+            data.Ogg = "";
             PlayMusicList.Add(data);
             return null;
         }

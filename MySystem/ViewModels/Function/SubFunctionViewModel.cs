@@ -1,4 +1,5 @@
-﻿using MySystem.Models;
+﻿using ConnetDB.MySystemManagement;
+using MySystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -34,7 +35,7 @@ namespace MySystem.ViewModels.Function
 
         //呼叫WebTypeDataDB
         WebTypeDataDB _WebTypeDataDB = new WebTypeDataDB();
-
+        SubFunctionDB subfunctionDB;
         /// <summary>
         /// 儲存網業類清單
         /// </summary>
@@ -65,8 +66,9 @@ namespace MySystem.ViewModels.Function
 
         public string addSubFunction()
         {
-
-            return null;
+            subfunctionDB = new SubFunctionDB();
+            string addSubFunctionMessage = subfunctionDB.addSubFunction(SubFunctionENName, SubFunctionCNName, SubFunctionURL, SubFunctionType);
+            return addSubFunctionMessage;
         }
     }
 }
