@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace ConnetDB.MySystemManagement
+namespace ConnetDB.MySystemDB
 {
     public class WebDataDB : DB_Base
     {

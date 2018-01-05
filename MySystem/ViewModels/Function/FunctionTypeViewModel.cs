@@ -18,8 +18,6 @@ namespace MySystem.ViewModels.Function
         /// <summary>
         /// 功能類別中文名稱
         /// </summary>
-        public string FunctionTypeCNName { get; set; }
-
-
+        public string FunctionTypeCNName { get; set; } 
     }
 }

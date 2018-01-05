@@ -8,10 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
+    
     /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
+        margin-bottom: 0;
+        border-radius: 0;
     }
 
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -19,39 +20,50 @@
 
     /* Set gray background color and 100% height */
     .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
+        padding-top: 20px;
+        background-color: #f1f1f1;
+        height: 100%;
     }
 
     /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    </style>
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+</style>
 </head>
 <body>
-    @Html.Partial("_HeadPage")
+    <header>
+        @Html.Partial("_HeadPage")
+    </header>
     <div class="container-fluid">
         <div class="row content">
             <div class="col-lg-2 sidenav">
                 @{Html.RenderAction("_SidePage", "SidePage");}
                 @*tml.Partial("_SidePage")*@
             </div>
-            <div class="col-lg-10">
-                <!-- Contents -->
-                @RenderBody()
-            </div>
+            <div class="col-md-10">
+                    <div class="page-header">
+                        <h1>
+                            @ViewBag.Title
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Contents -->
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
-    <footer class="container-fluid text-center">
-        <p>Footer Text</p>
-    </footer>
-    <!-- Scripts -->
-    <script src="/Scripts/jquery-1.9.0.js"></script>
-    <script src="/Scripts/bootstrap.js"></script>
+        @*<footer class="container-fluid text-center">
+            <p>Footer Text</p>
+        </footer>*@
+        <!-- Scripts -->
+     <script src="/Scripts/jquery-3.2.1.js"></script>
+     <script src="~/Scripts/bootstrap.js"></script>
 </body>
 
 </html>

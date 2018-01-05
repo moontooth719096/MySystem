@@ -15,7 +15,7 @@
                  </h4>
              </div>
              <div id=@data.MainFunctionName class="panel-collapse collapse">
-                 @foreach(var subdata in Model.SubFunctionList.Where(x=> x.SubFunctionType == data.MainFunctionType))
+                 @foreach(var subdata in Model.SubFunctionList.Where(x=> x.MainFunctionType == data.MainFunctionID))
                  {
                    <ul class="list-group">
                        <li class="list-group-item"><a href=@subdata.SubFunctionURL>@subdata.SubFunctionCNName</a></li>
@@ -26,11 +26,11 @@
         }
     </div>
 </div>
-<div class="input-group">
+@*<div class="input-group">
     <input type="text" class="form-control" placeholder="Search Blog..">
     <span class="input-group-btn">
         <button class="btn btn-default" type="button">
             <span class="glyphicon glyphicon-search"></span>
         </button>
     </span>
-</div>
+</div>*@

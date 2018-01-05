@@ -1,0 +1,94 @@
+﻿@model MySystem.ViewModels.Function.MainFunctionViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="row col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <!-- Contents -->
+            <div class="col-md-12">
+                @using (Html.BeginForm("MainFunctionPage", "Function", FormMethod.Post))
+                {
+                  <div class="btn-group">
+                      @Html.DropDownListFor(m => m.Select_FunctionType, Model.Function_Select, new { @class = "form-control", onchange = "this.form.submit();" })
+                  </div>
+                }
+                <br><br>
+                <table class="table table-hover table-bordered table-condensed">
+                    <thead>
+                        <tr class="info">
+                            <th>主功能代號</th>
+                            <th>主功能名稱</th>
+                            <th>
+                                <button id="CreatBtn" type="button" onclick="hide_tr()" class="btn btn-success btn-xs">
+                                    <span id="CreatIcon" class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbTeams">
+                        <tr id="CreatTr" style="display:none">
+                            <td></td>
+                            @using (Html.BeginForm("MainFunctionPage", "Function", FormMethod.Post))
+                            {
+                                <td>@Html.TextBoxFor(m => m.MainFunctionName, new { @class = "form-control" })</td>
+                                <td>
+                                    <button name="Active" type="submit" class="btn btn-success btn-sm" value="Add">新增</button>
+                                </td>
+                            }
+                        </tr>
+                        @if (Model.MainFunctionList != null && Model.MainFunctionList.Count > 0)
+                        {
+                            foreach (var data in Model.MainFunctionList)
+                            {
+                                using (Html.BeginForm("MainFunctionPage", "Function", FormMethod.Post))
+                                {
+                                    <tr>
+                                        <td style="width:10%">@data.MainFunctionID @Html.Hidden("MainFunctionID", data.MainFunctionID)</td>
+                                        <td style="width:auto">@data.MainFunctionName @Html.Hidden("MainFunctionName", data.MainFunctionName)</td>
+                                        <td style="width:15%">
+                                            <button name="Active" type="submit" class="btn btn-warning btn-sm" value="Edit">編輯</button>
+                                            <button name="Active" type="submit" class="btn btn-danger btn-sm" value="Delete">刪除</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+   function hide_tr() {
+       var result_style = document.getElementById('CreatTr').style;
+       result_style.display = 'table-row';
+       
+       var CreatIcon_style = document.getElementById('CreatIcon');
+       CreatIcon_style.className = 'glyphicon glyphicon-minus';
+       var CreatBtn_style = document.getElementById('CreatBtn');
+       CreatBtn_style.onclick = function () {
+           show_tr();
+       };
+   }
+   function show_tr() {
+       var result_style = document.getElementById('CreatTr').style;
+       result_style.display = 'none';
+       var CreatBtn_style = document.getElementById('CreatIcon');
+       CreatBtn_style.className = 'glyphicon glyphicon-plus';
+       var CreatBtn_style = document.getElementById('CreatBtn');
+       CreatBtn_style.onclick = function () {
+           hide_tr();
+       };
+   }
+   $("#Select_FunctionType").on("change", function () {
+       $("form").submit();
+   });
+   function Change()
+   {
+       window.location.href = ('@Url.Action("MainFunctionPage", "Function")');
+   }
+</script>

@@ -41,12 +41,16 @@
         @Html.Partial("_HeadPage")
     </header>
     <!-- Contents -->
-    @RenderBody()
+    <div class="container-fluid">
+        <div class="row content">
+            @RenderBody()
+        </div>
+    </div>
     <footer class="container-fluid text-center">
         <p>Footer Text</p>
-    </footer>
+    </footer> 
     <!-- Scripts -->
-    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
-﻿using MySystem.Models.Function;
-using MySystem.ViewModels.Function;
+﻿using MySystem.ViewModels.Function;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +15,9 @@ namespace MySystem.Controllers
         public ActionResult _SidePage()
         {
             SidePageViewModel model = new SidePageViewModel();
+            string message = string.Empty;
             model.getMainFunctionList();
-            model.getSubFunctionList();
+            message =  model.getSubFunctionList();
             return View(model);
         }
 

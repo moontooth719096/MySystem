@@ -170,10 +170,6 @@
       <Private>True</Private>
       <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
-    <Reference Include="WebGrease">
-      <Private>True</Private>
-      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
-    </Reference>
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
@@ -196,13 +192,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\UserData.cs" />
-    <Compile Include="Models\Function\MainFunctionDB.cs" />
+    <Compile Include="Models\Function\MainFunctionModel.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="ViewModels\Function\MainFunctionViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebDataModel.cs" />
+    <Compile Include="ViewModels\Public\DataTableConvertToList.cs" />
+    <Compile Include="ViewModels\Public\Model_Base.cs" />
     <Compile Include="Models\MusicPlayer\PlayListModel.cs" />
     <Compile Include="Models\Test\Class1.cs" />
     <Compile Include="ViewModels\Function\FunctionTypeViewModel.cs" />
     <Compile Include="ViewModels\Function\SubFunctionViewModel.cs" />
-    <Compile Include="ViewModels\Function\MainFunctionViewModel.cs" />
     <Compile Include="ViewModels\LikeWeb\WebDataViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebTypeDataDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -383,14 +382,18 @@
     <Content Include="Content\_bootstrap-datetimepicker.less" />
     <Content Include="CSS\MusicPlayer\Images\Thumbs.db" />
     <None Include=".bin\node.cmd" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Properties\PublishProfiles\MySystem.pubxml" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
@@ -437,6 +440,8 @@
     <Content Include="Views\Function\MainFunctionAddPage.cshtml" />
     <Content Include="Views\Function\SubFunctionAddPage.cshtml" />
     <Content Include="Views\MusicPlayer\MusicPlayerPage.cshtml" />
+    <Content Include="Views\Function\MainFunctionPage.cshtml" />
+    <Content Include="Views\MusicPlayer\MusicPlayerV2Page.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

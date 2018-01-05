@@ -1,26 +1,25 @@
-﻿using MySystem.Models.Function;
-using MySystem.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Web.Mvc;
-using ConnetDB.MySystemManagement;
+using ConnetDB.MySystemDB;
+using MySystem.Models.Function;
+using System;
+using MySystem.Models.Account;
+using System.Linq;
 
 namespace MySystem.ViewModels.Function
 {
-    public class SidePageViewModel
+    public class SidePageViewModel : ModelBase
     {
         public string Message="";
 
         /// <summary>
         /// 主功能清單
         /// </summary>
-        public List<MainFunctionViewModel> MainFunctionList = new List<MainFunctionViewModel>();
+        public List<MainFunctionModel> MainFunctionList = new List<MainFunctionModel>();
         /// <summary>
         /// 子功能清單
         /// </summary>
         public List<SubFunctionViewModel> SubFunctionList = new List<SubFunctionViewModel>();
-
         /// <summary>
         /// 取得主功能清單
         /// </summary>
@@ -28,29 +27,25 @@ namespace MySystem.ViewModels.Function
         { 
             MainFunctionDB mainfunctionDB = new MainFunctionDB();
             DataTable MainFunctionDT = new DataTable();
-            MainFunctionDT = mainfunctionDB.QueryMainFunctionData();
+            MainFunctionDT = mainfunctionDB.getData();
             foreach (DataRow dr in MainFunctionDT.Rows)
             {
-                MainFunctionViewModel Data = new MainFunctionViewModel();
-                Data.MainFunctionID = dr["MainFunctionID"].ToString();
+                MainFunctionModel Data = new MainFunctionModel();
+                Data.MainFunctionID = Convert.ToInt32(dr["MainFunctionID"]);
                 Data.MainFunctionName = dr["MainFunctionName"].ToString();
-                Data.MainFunctionType = dr["MainFunctionType"].ToString();
                 MainFunctionList.Add(Data);
             }
         }
         //取得子功能清單
-        public void getSubFunctionList()
+        public string getSubFunctionList()
         {
-            /*SubFunctionViewModel Data = new SubFunctionViewModel();
-            Data.SubFunctionID = "0";
-            Data.SubFunctionENName = "LikeWeb";
-            Data.SubFunctionCNName = "我的最愛網頁";
-            Data.SubFunctionURL = "/LikeWeb/LikeWebMainPage";
-            Data.SubFunctionType = "3";
-            SubFunctionList.Add(Data);*/
             SubFunctionDB subfunctionDB = new SubFunctionDB();
             DataTable MainFunctionDT = new DataTable();
-            MainFunctionDT = subfunctionDB.QuerySubFunctionData();
+            MainFunctionDT = subfunctionDB.getData();
+            if (CheckDataTableIsError(MainFunctionDT))
+            {
+                return MainFunctionDT.Rows[0]["msg"].ToString();
+            }
             foreach (DataRow dr in MainFunctionDT.Rows)
             {
                 SubFunctionViewModel Data = new SubFunctionViewModel();
@@ -58,9 +53,11 @@ namespace MySystem.ViewModels.Function
                 Data.SubFunctionENName = dr["SubFunctionENName"].ToString();
                 Data.SubFunctionCNName = dr["SubFunctionCNName"].ToString();
                 Data.SubFunctionURL = dr["SubFunctionURL"].ToString();
-                Data.SubFunctionType = dr["SubFunctionType"].ToString();
+                Data.MainFunctionType = Convert.ToInt32(dr["MainFunctionType"]);
                 SubFunctionList.Add(Data);
             }
+
+            return null;
         }
     }
 }

@@ -20,5 +20,12 @@ namespace MySystem.Controllers
             return View(model);
         }
 
+        public ActionResult MusicPlayerV2Page()
+        {
+            MusicPlayerViewModel model = new MusicPlayerViewModel();
+            model.getMusicList();
+            return View(model);
+        }
+
     }
 }

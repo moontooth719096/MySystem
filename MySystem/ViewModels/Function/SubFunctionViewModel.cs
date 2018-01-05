@@ -1,4 +1,4 @@
-﻿using ConnetDB.MySystemManagement;
+﻿using ConnetDB.MySystemDB;
 using MySystem.Models;
 using System;
 using System.Collections.Generic;
@@ -31,18 +31,19 @@ namespace MySystem.ViewModels.Function
         /// <summary>
         /// 功能類別
         /// </summary>
-        public string SubFunctionType { get; set; }
+        public int MainFunctionType { get; set; }
 
         //呼叫WebTypeDataDB
-        WebTypeDataDB _WebTypeDataDB = new WebTypeDataDB();
+        MainFunctionDB mainfunctionDB;
         SubFunctionDB subfunctionDB;
         /// <summary>
         /// 儲存網業類清單
         /// </summary>
-        public IEnumerable<SelectListItem> _WebTypeList { get; set; }
-        public string getWebType()
+        public IEnumerable<SelectListItem> _MainFunctionList { get; set; }
+        public string get_MainFunctionList()
         {
-            DataTable dt = _WebTypeDataDB.getWebType();
+            mainfunctionDB = new MainFunctionDB();
+            DataTable dt = mainfunctionDB.getData();
             List<SelectListItem> mySelectItemList = new List<SelectListItem>();
             try
             {
@@ -50,12 +51,12 @@ namespace MySystem.ViewModels.Function
                 {
                     mySelectItemList.Add(new SelectListItem()
                     {
-                        Text = dr["WebTypeCNName"].ToString(),
-                        Value = dr["WebTypeID"].ToString(),
+                        Text = dr["MainFunctionName"].ToString(),
+                        Value = dr["MainFunctionID"].ToString(),
                         Selected = false
                     });
                 }
-                _WebTypeList = mySelectItemList;
+                _MainFunctionList = mySelectItemList;
             }
             catch (Exception ex)
             {
@@ -67,7 +68,7 @@ namespace MySystem.ViewModels.Function
         public string addSubFunction()
         {
             subfunctionDB = new SubFunctionDB();
-            string addSubFunctionMessage = subfunctionDB.addSubFunction(SubFunctionENName, SubFunctionCNName, SubFunctionURL, SubFunctionType);
+            string addSubFunctionMessage = subfunctionDB.addSubFunction(SubFunctionENName, SubFunctionCNName, SubFunctionURL, MainFunctionType);
             return addSubFunctionMessage;
         }
     }
