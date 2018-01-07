@@ -5,22 +5,20 @@ using System.ComponentModel.DataAnnotations;
 //todo: 請修改對應的namespace
 namespace ConnetDB.Models
 {        
-		             
-			//mapping table name: WebData
-			public class WebData                            
-			{
-				[Display(Name="WebID")]                        
-				public Int32 WebID  { get; set; }                                        
-					
-				[Display(Name="WebName")]                        
-				public String WebName  { get; set; }                                        
-					
-				[Display(Name="WebType")]                        
-				public String WebType  { get; set; }                                        
-					
-				[Display(Name="WebURL")]                        
-				public String WebURL  { get; set; }                                        
-					
-				                                
-			}                            
-			}
+             
+	//mapping table name: TB_Calendar
+	public class TB_Calendar                            
+	{
+		 [Display(Name="ID")]                        
+	   public Int64 ID  { get; set; }
+	    [Display(Name="EventName")]                        
+	   public String EventName  { get; set; }
+	    [Display(Name="Description")]                        
+	   public String Description  { get; set; }
+	    [Display(Name="EventTime")]                        
+	   public DateTime EventTime  { get; set; }
+	    [Display(Name="CreateDate")]                        
+	   public DateTime CreateDate  { get; set; }
+	                                   
+	}                            
+}

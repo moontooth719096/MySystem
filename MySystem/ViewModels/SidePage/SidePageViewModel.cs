@@ -5,6 +5,8 @@ using MySystem.Models.Function;
 using System;
 using MySystem.Models.Account;
 using System.Linq;
+using MySystem.Models.Management;
+using MySystem.ViewModels.Management;
 
 namespace MySystem.ViewModels.Function
 {

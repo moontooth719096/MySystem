@@ -182,26 +182,29 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
-    <Compile Include="Controllers\Fumction\FunctionController.cs" />
+    <Compile Include="Controllers\BasePage\HomeController.cs" />
+    <Compile Include="Controllers\Management\FunctionController.cs" />
     <Compile Include="Controllers\LikeWeb\LikeWebController.cs" />
-    <Compile Include="Controllers\MainPage\MainPageController.cs" />
+    <Compile Include="Controllers\Management\ManagementController.cs" />
     <Compile Include="Controllers\MusicPlayer\MusicPlayerController.cs" />
-    <Compile Include="Controllers\SidePage\SidePageController.cs" />
+    <Compile Include="Controllers\BasePage\SidePageController.cs" />
     <Compile Include="Controllers\Test\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\UserData.cs" />
-    <Compile Include="Models\Function\MainFunctionModel.cs" />
+    <Compile Include="Models\Management\CalendarModel.cs" />
+    <Compile Include="Models\Management\MainFunctionModel.cs" />
     <Compile Include="Models\ModelBase.cs" />
-    <Compile Include="ViewModels\Function\MainFunctionViewModel.cs" />
+    <Compile Include="ViewModels\Management\CalendarViewModel.cs" />
+    <Compile Include="ViewModels\Management\MainFunctionViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebDataModel.cs" />
     <Compile Include="ViewModels\Public\DataTableConvertToList.cs" />
     <Compile Include="ViewModels\Public\Model_Base.cs" />
     <Compile Include="Models\MusicPlayer\PlayListModel.cs" />
     <Compile Include="Models\Test\Class1.cs" />
-    <Compile Include="ViewModels\Function\FunctionTypeViewModel.cs" />
-    <Compile Include="ViewModels\Function\SubFunctionViewModel.cs" />
+    <Compile Include="ViewModels\Management\FunctionTypeViewModel.cs" />
+    <Compile Include="ViewModels\Management\SubFunctionViewModel.cs" />
     <Compile Include="ViewModels\LikeWeb\WebDataViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebTypeDataDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -435,16 +438,18 @@
     <Content Include="Views\LikeWeb\LikeWebModifyPage.cshtml" />
     <Content Include="Views\Shared\_SidePage.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\MainPage\Index.cshtml" />
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\Function\MainFunctionAddPage.cshtml" />
     <Content Include="Views\Function\SubFunctionAddPage.cshtml" />
     <Content Include="Views\MusicPlayer\MusicPlayerPage.cshtml" />
     <Content Include="Views\Function\MainFunctionPage.cshtml" />
     <Content Include="Views\MusicPlayer\MusicPlayerV2Page.cshtml" />
+    <Content Include="Views\Management\CalendarPage.cshtml" />
+    <Content Include="Views\Home\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Home\" />
     <Folder Include="Filters\" />
     <Folder Include="Images\" />
   </ItemGroup>

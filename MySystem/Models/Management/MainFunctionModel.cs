@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MySystem.Models.Function
+namespace MySystem.Models.Management
 {
     public class MainFunctionModel
     {

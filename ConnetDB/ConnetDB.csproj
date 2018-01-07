@@ -125,6 +125,7 @@
     <Compile Include="Models\Class1.cs" />
     <Compile Include="MySystemDB\DB_Base.cs" />
     <Compile Include="MySystemDB\IDB_Base.cs" />
+    <Compile Include="MySystemDB\TB_Calendar_DB.cs" />
     <Compile Include="MySystemDB\MainFunctionDB.cs" />
     <Compile Include="MySystemDB\SQLParameter.cs" />
     <Compile Include="MySystemDB\SubFunctionDB.cs" />

@@ -1,13 +1,13 @@
 ﻿using ConnetDB.MySystemDB;
 using MySystem.Models;
-using MySystem.Models.Function;
+using MySystem.Models.Management;
 using MySystem.ViewModels.Public;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Web.Mvc;
 
-namespace MySystem.ViewModels.Function
+namespace MySystem.ViewModels.Management
 {
     public class MainFunctionViewModel:Model_Base
     {
@@ -20,6 +20,7 @@ namespace MySystem.ViewModels.Function
         /// 功能名稱
         /// </summary>
         public string MainFunctionName { get; set; }
+        public string EditName { get; set; }
 
         public string Active { get; set; }
 
@@ -62,7 +63,7 @@ namespace MySystem.ViewModels.Function
         {
             sqlParameter = new SQLParameter();
             sqlParameter.SetActionValue.Add("MainFunctionName", MainFunctionName);
-            return mainfunctionDB.addData(sqlParameter);
+            return mainfunctionDB.editData(sqlParameter);
         }
 
         public string deleteMainFunction()

@@ -8,16 +8,16 @@ using System.Web;
 
 namespace ConnetDB.MySystemDB
 {
-    public class MainFunctionDB : DB_Base, IDB_Base
+    public class TB_Calendar_DB : DB_Base, IDB_Base
     {
-        string TBName = "MainFunctionData";
-        public MainFunctionDB()
+        string TBName = "TB_Calendar";
+        public TB_Calendar_DB()
         {
             string DBName = "MySystemDB";
             GetconnString(DBName);
         }
         /// <summary>
-        /// 查詢Tabel MainFunctionData
+        /// 查詢Tabel TB_Calendar
         /// </summary>
         /// <param name="Parameter"></param>
         /// <returns></returns>

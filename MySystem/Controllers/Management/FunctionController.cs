@@ -1,4 +1,4 @@
-﻿using MySystem.ViewModels.Function;
+﻿using MySystem.ViewModels.Management;
 using System;
 using System.Web.Mvc;
 
@@ -47,8 +47,8 @@ namespace MySystem.Controllers
             {
                 message = model.deleteMainFunction();
             }
-            return View(model);
-            //return RedirectToAction("MainFunctionPage");
+            //return View(model);
+            return RedirectToAction("MainFunctionPage");
         }
         public ActionResult SubFunctionAddPage()
         {

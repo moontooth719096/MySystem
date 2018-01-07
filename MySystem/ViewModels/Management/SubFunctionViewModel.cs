@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MySystem.ViewModels.Function
+namespace MySystem.ViewModels.Management
 {
     
     public class SubFunctionViewModel
