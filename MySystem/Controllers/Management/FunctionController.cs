@@ -39,7 +39,7 @@ namespace MySystem.Controllers
             {
                 message = model.addMainFunction(model.MainFunctionName);
             }
-            if (model.Active.IndexOf("Edit")>=0)
+            if (model.Active != null && model.Active.IndexOf("Edit")>=0)
             {
                 message = model.editMainFunction(model.Active.Split(',')[1]);
             }

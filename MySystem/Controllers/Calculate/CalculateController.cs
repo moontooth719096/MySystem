@@ -1,8 +1,4 @@
-﻿using MySystem.ViewModels.Function;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MySystem.ViewModels.Calculate;
 using System.Web.Mvc;
 
 namespace MySystem.Controllers
@@ -15,5 +11,12 @@ namespace MySystem.Controllers
             return View();
         }
 
+        public ActionResult ExchangeRate()
+        {
+            string message = string.Empty;
+            ExchangeRateViewModel model = new ExchangeRateViewModel();
+            model.GetExchangeRate();
+            return View(model);
+        }
     }
 }

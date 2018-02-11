@@ -6,19 +6,25 @@ using System.ComponentModel.DataAnnotations;
 namespace ConnetDB.Models
 {        
              
-	//mapping table name: TB_Calendar
-	public class TB_Calendar                            
+	//mapping table name: TB_ExchangeRate
+	public class TB_ExchangeRate                            
 	{
-		 [Display(Name="ID")]                        
-	   public Int64 ID  { get; set; }
-	    [Display(Name="EventName")]                        
-	   public String EventName  { get; set; }
-	    [Display(Name="Description")]                        
-	   public String Description  { get; set; }
-	    [Display(Name="EventTime")]                        
-	   public DateTime EventTime  { get; set; }
+		 [Display(Name="CurrencyID")]                        
+	   public Int64 CurrencyID  { get; set; }
+	    [Display(Name="CurrencyTypeName")]                        
+	   public String CurrencyTypeName  { get; set; }
+	    [Display(Name="CashBuyExchangeRate")]                        
+	   public String CashBuyExchangeRate  { get; set; }
+	    [Display(Name="CashSellExchangeRate")]                        
+	   public String CashSellExchangeRate  { get; set; }
+	    [Display(Name="SpotBuyExchangeRate")]                        
+	   public String SpotBuyExchangeRate  { get; set; }
+	    [Display(Name="SpotSellExchangeRate")]                        
+	   public String SpotSellExchangeRate  { get; set; }
 	    [Display(Name="CreateDate")]                        
 	   public DateTime CreateDate  { get; set; }
+	    [Display(Name="UpdateDate")]                        
+	   public DateTime UpdateDate  { get; set; }
 	                                   
 	}                            
 }

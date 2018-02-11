@@ -3,6 +3,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<script src="~/Scripts/moment.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
 <div class="row col-md-12">
     <div class="panel panel-default">
         <div class="panel-body">
@@ -19,7 +22,7 @@
                     <thead>
                         <tr class="info">
                             <th>事件時間</th>
-                            <th>事件日期</th>
+                            <th>事件名稱</th>
                             <th>詳細內容</th>
                             <th>
                                 <button id="CreatBtn" type="button" onclick="hide_tr()" class="btn btn-success btn-xs">
@@ -32,12 +35,10 @@
                         <tr id="CreatTr" style="display:none">
                             @using (Html.BeginForm("CalendarPage", "Management", FormMethod.Post))
                             {
-                                
                                 <td>
-                                    
                                     <div class="form-group">
                                         <div class='input-group date' id='datetimepicker1'>
-                                            @Html.TextBoxFor(m => m.EventTime, new { @class = "form-control", @readonly = "readonly" })
+                                            @Html.TextBoxFor(m => m.EventTime, new { @class = "form-control" })
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -55,23 +56,26 @@
                         {
                             foreach (var data in Model.CalendarList)
                             {
-                                using (Html.BeginForm("MainFunctionPage", "Function", FormMethod.Post))
+                                using (Html.BeginForm("CalendarPage", "Management", FormMethod.Post))
                                 {
-                                    string normal = "normal" + Model.ID;
-                                    string ActionEdit = "ActionEdit" + Model.ID;
-                                    string UI = "UI" + Model.ID;
+                                    string normal = "normal" + data.ID;
+                                    string ActionEdit = "ActionEdit" + data.ID;
+                                    string UI = "UI" + data.ID;
                                     <tr>
-                                        <td style="width:10%">@data.EventTime @Html.Hidden("MainFunctionID", data.EventTime)</td>
+                                        <td style="width:10%">@data.EventTime @Html.Hidden("EventTime", data.EventTime)</td>
                                         <td style="width:auto">
                                             @data.EventName @Html.Hidden("EventName", data.EventName)
                                         </td>
+                                        <td style="width:auto">
+                                            @data.Description @Html.Hidden("Description", data.Description)
+                                        </td>
                                         <td id="@normal" style="width:15%">
-                                            <button type="button" class="btn btn-warning btn-sm" onclick="Edit('@Model.ID')">編輯</button>
-                                            <button name="Active" type="submit" class="btn btn-danger btn-sm" value="Delete">刪除</button>
+                                            <button type="button" class="btn btn-warning btn-sm" onclick="Edit('@data.ID')">編輯</button>
+                                            <button name="Active" type="submit" class="btn btn-danger btn-sm" value=@("Delete," + data.ID)>刪除</button>
                                         </td>
                                         <td id="@ActionEdit" style="display:none;width:15%">
-                                            <button name="Active" type="submit" class="btn btn-warning btn-sm" value="Edit">確定</button>
-                                            <button type="button" class="btn btn-danger btn-sm" onclick="CancelEdit('@Model.ID')">取消</button>
+                                            <button name="Active" type="submit" class="btn btn-warning btn-sm" value=@("Edit," + data.ID)>確定</button>
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="CancelEdit('@data.ID')">取消</button>
                                         </td>
                                     </tr>
                                 }
@@ -83,20 +87,10 @@
         </div>
     </div>
 </div>
-<script src="~/Scripts/moment.js"></script>
-<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
-<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+
 <script>
-    $(function () {
-        $('#datetimepicker1').datetimepicker({
-            format: "yyyy/MM/dd HH:mm:ss",
-            autoclose: true,
-            startDate: "today",
-            clearBtn: true,
-            calendarWeeks: true,
-            todayHighlight: true,
-            language: 'zh-TW'
-        });
+    $('#EventTime').datetimepicker({
+        format:'YYYY/MM/DD HH:mm:ss'
     });
    function hide_tr() {
        var result_style = document.getElementById('CreatTr').style;

@@ -8,7 +8,7 @@ using System.Web;
 
 namespace ConnetDB.MySystemDB
 {
-    public class MainFunctionDB : DB_Base, IDB_Base
+    public class MainFunctionDB : DB_Base
     {
         string TBName = "MainFunctionData";
         public MainFunctionDB()

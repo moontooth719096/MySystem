@@ -25,13 +25,13 @@ namespace MySystem.Controllers
             {
                 message = model.addCalendar();
             }
-            if (model.Active == "Edit")
+            if (model.Active!=null &&  model.Active.IndexOf("Edit") >= 0)
             {
-                //message = model.editCalendar();
+                //message = model.editCalendar(model.Active.Split(',')[1]);
             }
-            if (model.Active == "Delete")
+            if (model.Active != null && model.Active.IndexOf("Delete") >= 0)
             {
-                message = model.deleteCalendar();
+                message = model.deleteCalendar(model.Active.Split(',')[1]);
             }
             return RedirectToAction("CalendarPage");
         }

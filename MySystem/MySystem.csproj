@@ -43,6 +43,10 @@
       <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.6.16.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.16\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -194,9 +198,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\UserData.cs" />
+    <Compile Include="Models\Calculate\ExchangeRateModel.cs" />
     <Compile Include="Models\Management\CalendarModel.cs" />
     <Compile Include="Models\Management\MainFunctionModel.cs" />
     <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="ViewModels\Calculate\ExchangeRateViewModel.cs" />
     <Compile Include="ViewModels\Management\CalendarViewModel.cs" />
     <Compile Include="ViewModels\Management\MainFunctionViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebDataModel.cs" />
@@ -448,6 +454,7 @@
     <Content Include="Views\Management\CalendarPage.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
     <Content Include="Views\Calculate\TorebaTPConvert.cshtml" />
+    <Content Include="Views\Calculate\ExchangeRate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

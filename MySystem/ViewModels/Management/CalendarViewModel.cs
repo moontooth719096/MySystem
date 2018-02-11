@@ -17,6 +17,7 @@ namespace MySystem.ViewModels.Management
         public String EventName { get; set; }
         public String Description { get; set; }
         public String EventTime { get; set; }
+
         #region DB
         TB_Calendar_DB calendarDB;
         #endregion
@@ -32,10 +33,12 @@ namespace MySystem.ViewModels.Management
 
         public string addCalendar()
         {
+            DateTime Now = DateTime.Now;
             sqlParameter = new SQLParameter();
             sqlParameter.SetActionValue.Add("EventName", this.EventName);
             sqlParameter.SetActionValue.Add("Description", this.Description);
             sqlParameter.SetActionValue.Add("EventTime", this.EventTime);
+            sqlParameter.SetActionValue.Add("CreateDate", Now);
             calendarDB = new TB_Calendar_DB();
             return calendarDB.addData(sqlParameter);
         }
@@ -48,10 +51,10 @@ namespace MySystem.ViewModels.Management
             return calendarDB.editData(sqlParameter);
         }
 
-        public string deleteCalendar()
+        public string deleteCalendar(string ID)
         {
             sqlParameter = new SQLParameter();
-            sqlParameter.WhereCondition.Add("MainFunctionID", ID.ToString());
+            sqlParameter.WhereCondition.Add("ID", ID);
             calendarDB = new TB_Calendar_DB();
             return calendarDB.deleteDate(sqlParameter);
         }

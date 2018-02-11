@@ -8,7 +8,7 @@ using System.Web;
 
 namespace ConnetDB.MySystemDB
 {
-    public class TB_Calendar_DB : DB_Base, IDB_Base
+    public class TB_Calendar_DB : DB_Base
     {
         string TBName = "TB_Calendar";
         public TB_Calendar_DB()

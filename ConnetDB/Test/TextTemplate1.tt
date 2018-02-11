@@ -22,7 +22,7 @@ namespace ConnetDB.Models
 	string[] restrictions = new string[4];
 	restrictions[1] = "dbo";
 	//修改table名稱
-	restrictions[2] = "TB_Calendar";
+	restrictions[2] = "TB_ExchangeRate";
 	DataTable schema = conn.GetSchema("Tables", restrictions);
 	
 	string selectQuery = "select * from  @tableName"; 
