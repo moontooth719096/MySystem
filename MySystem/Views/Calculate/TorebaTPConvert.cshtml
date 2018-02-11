@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "抓樂霸TP換算";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            TP轉換：
+        </div>
+        <div class="col-md-3">
+            @Html.TextBox("TPValue",0)
+        </div>
+        <div class="col-md-3">
+            @Html.TextBox("ConvertResult",0, new{ @readonly="true",@class="form-contrl"})
+        </div>
+        <div class="col-md-3">
+            <button type="button" onclick="Convert()" class="btn btn-success">轉換</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            次數轉換台幣：
+        </div>
+        <div class="col-md-3">
+            @Html.TextBox("CountValue",0)
+        </div>
+        <div class="col-md-3">
+            @Html.TextBox("NTConvertResult",0, new { @readonly = "true", @class = "form-contrl" })
+        </div>
+        <div class="col-md-3">
+            <button type="button" onclick="Convert()" class="btn btn-success">轉換</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Convert()
+    {
+        var TPValue = document.getElementById("TPValue").value;
+        var Result = TPValue * 0.033;
+        document.getElementById("ConvertResult").value = Result;
+    }
+    $(document).ready(function () {
+        $('#TPValue').keyup(function () {
+            var TPValue = $(this).val();
+            var Result = TPValue * 0.033;
+            document.getElementById("ConvertResult").value = Result;
+        });
+        $('#CountValue').keyup(function () {
+            var TPValue = $(this).val();
+            var Result = $(this).val() * $('#ConvertResult').val();
+            document.getElementById("NTConvertResult").value = Result;
+        });
+    });
+</script>
