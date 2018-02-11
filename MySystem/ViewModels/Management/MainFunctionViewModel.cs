@@ -59,10 +59,11 @@ namespace MySystem.ViewModels.Management
             return mainfunctionDB.addData(sqlParameter);
         }
 
-        public string editMainFunction(string MainFunctionName)
+        public string editMainFunction(string MainFunctionID)
         {
             sqlParameter = new SQLParameter();
-            sqlParameter.SetActionValue.Add("MainFunctionName", MainFunctionName);
+            sqlParameter.SetActionValue.Add("MainFunctionName", this.MainFunctionName);
+            sqlParameter.WhereCondition.Add("MainFunctionName", MainFunctionID);
             return mainfunctionDB.editData(sqlParameter);
         }
 

@@ -39,9 +39,9 @@ namespace MySystem.Controllers
             {
                 message = model.addMainFunction(model.MainFunctionName);
             }
-            if (model.Active == "Edit")
+            if (model.Active.IndexOf("Edit")>=0)
             {
-                message = model.editMainFunction(model.MainFunctionName);
+                message = model.editMainFunction(model.Active.Split(',')[1]);
             }
             if (model.Active == "Delete")
             {

@@ -57,6 +57,11 @@ namespace ConnetDB.MySystemDB
                 ConnetSetValue += string.Concat(pa.Key + " = " + "@" + pa.Key);
             }
             SQLString.Append(string.Concat(ConnetSetValue));
+            SQLString.Append(@"Delete " + TBName + " Where 1=1");
+            foreach (var pa in Parameter.WhereCondition)
+            {
+                SQLString.Append(string.Concat(" And " + pa.Key + " =" + pa.Value));
+            }
             ExcuteAction(Conn, SQLString.ToString(), Parameter);
             return null;
         }
