@@ -183,6 +183,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\BasePage\HomeController.cs" />
+    <Compile Include="Controllers\Calculate\CalculateController.cs" />
     <Compile Include="Controllers\Management\FunctionController.cs" />
     <Compile Include="Controllers\LikeWeb\LikeWebController.cs" />
     <Compile Include="Controllers\Management\ManagementController.cs" />
@@ -446,6 +447,7 @@
     <Content Include="Views\MusicPlayer\MusicPlayerV2Page.cshtml" />
     <Content Include="Views\Management\CalendarPage.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
+    <Content Include="Views\Calculate\TorebaTPConvert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
