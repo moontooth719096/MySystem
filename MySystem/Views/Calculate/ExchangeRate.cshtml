@@ -1,6 +1,6 @@
 ﻿@model MySystem.ViewModels.Calculate.ExchangeRateViewModel
 @{
-    ViewBag.Title = "貨幣匯率表";
+    ViewBag.Title = "分帳換算";
 }
 
 <div class="container-fluid">
@@ -14,6 +14,7 @@
             </li>
         </ul>
         <div class="tab-content">
+            @*匯率表*@
             <div class="tab-pane active" id="panel-ExchangeRateBoard">
                 <div class="row">
                     <div class="panel panel-default">
@@ -88,10 +89,90 @@
                     </div>
                 </div>
             </div>
+            @*匯率換算*@
             <div class="tab-pane" id="panel-ExchangeRate">
-                
+                <div class="row">
+                    <div class="col-md-2">
+                       @Html.Label("他國貨幣轉換本國：")
+                    </div>
+                    <div class="col-md-3">
+                        @Html.Label("他國：")
+                    </div>
+                    <div class="col-md-3">
+                        @Html.Label("我國： ")
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        @Html.DropDownListFor(m => m.SelectCurrencyType, Model.CurrencyType_Select, new { @class = "form-control", onchange = "Convert()", style = "width:auto" })
+                    </div>
+                    <div class="col-md-3">
+                        @Html.TextBox("ConvertValue", 0, new { @class = "form-control"})
+                    </div>
+                    <div class="col-md-3">
+                        @Html.TextBox("ConvertResult", 0, new { @readonly = "true", @class = "form-control"})
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" onclick="Convert()" class="btn btn-success">轉換</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        @Html.Label("他國貨幣轉換本國：")
+                    </div>
+                    <div class="col-md-3">
+                        @Html.Label("我國： ")
+                        
+                    </div>
+                    <div class="col-md-3">
+                        @Html.Label("他國：")
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        @Html.DropDownListFor(m => m.SelectCurrencyType, Model.CurrencyType_Select, new { id = "SelectCurrencyType2", @class = "form-control", onchange = "Convert2()", style = "width:auto" })
+                    </div>
+                    <div class="col-md-3">
+                        @Html.TextBox("ConvertValue2", 0, new { @class = "form-control"})
+                    </div>
+                    <div class="col-md-3">
+                        @Html.TextBox("ConvertResult2", 0, new { @readonly = "true", @class = "form-control"})
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" onclick="Convert2()" class="btn btn-success">轉換</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
 </div>
+<script>
+    function Convert() {
+        var CurrencyRate = document.getElementById("SelectCurrencyType").value;
+        var Value = document.getElementById("ConvertValue").value;
+        var resultValue = CurrencyRate * Value;
+        document.getElementById("ConvertResult").value = resultValue;
+    }
+    function Convert2() {
+        var CurrencyRate = document.getElementById("SelectCurrencyType2").value;
+        var Value = document.getElementById("ConvertValue2").value;
+        var resultValue = Value / CurrencyRate;
+        document.getElementById("ConvertResult2").value = resultValue;
+    }
+    $(document).ready(function () {
+        $('#ConvertValue').keyup(function () {
+            var CurrencyRate = document.getElementById("SelectCurrencyType").value;
+            var Value = document.getElementById("ConvertValue").value;
+            var resultValue = CurrencyRate * Value;
+            document.getElementById("ConvertResult").value = resultValue;
+        });
+    });
+    $(document).ready(function () {
+        $('#ConvertValue2').keyup(function () {
+            var CurrencyRate = document.getElementById("SelectCurrencyType2").value;
+            var Value = document.getElementById("ConvertValue2").value;
+            var resultValue = Value / CurrencyRate;
+            document.getElementById("ConvertResult2").value = resultValue;
+        });
+    });
+</script>

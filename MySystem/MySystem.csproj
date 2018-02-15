@@ -455,6 +455,7 @@
     <Content Include="Views\Home\index.cshtml" />
     <Content Include="Views\Calculate\TorebaTPConvert.cshtml" />
     <Content Include="Views\Calculate\ExchangeRate.cshtml" />
+    <Content Include="Views\Calculate\AverageCostSharing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

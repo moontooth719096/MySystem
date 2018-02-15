@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "AverageCostSharing";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            每人費用：@Html.TextBox("Cost_Value", 0, new { @class = "form-control", style = "width:20%" })<br>
+            人數：@Html.TextBox("NumberOfPeople_Value", 0, new { @class = "form-control", style = "width:20%" })<br>
+            免費人數：@Html.TextBox("FreeNumberOfPeople_Value", 0, new { @class = "form-control", style = "width:20%" })<br>
+            服務費(%)：@Html.TextBox("ServiceFee_Value", 0, new { @class = "form-control", style = "width:20%" })<br>
+            @Html.CheckBox("Need_Vaule",false) 免費者需負擔服務費<br><br>
+            總金額：@Html.TextBox("Sum_Value", 0, new { @readonly = "true", @class = "form-control", style = "width:20%" })<br>
+            每人費用：@Html.TextBox("Average_Value", 0, new { @readonly = "true", @class = "form-control", style = "width:20%" })<br>
+            免費者費用:@Html.TextBox("FreePeople_Value", 0, new { @readonly = "true", @class = "form-control",style="width:20%" })
+            <button type="button" onclick="Calculate()" class="btn btn-success">計算</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Calculate()
+    {
+        var Cost = document.getElementById("Cost_Value").value;//每人花費
+        var NumberOfPeople = document.getElementById("NumberOfPeople_Value").value;//人數
+        var FreeNumberOfPeople = document.getElementById("FreeNumberOfPeople_Value").value;//免費人數
+        var ServiceFee = document.getElementById("ServiceFee_Value").value;//服務費%數
+        var Need = document.getElementById("Need_Vaule").checked;
+        var Sum = 0, Average = 0, FreePeopleCost = 0;
+        //計算總金額
+        Sum = DoSum(Cost, NumberOfPeople, ServiceFee);
+        //判斷是否有免費人數
+        if (FreeNumberOfPeople != 0 && Need)
+        {
+            //有免費人數則計算免費者須負擔費用
+            FreePeopleCost = FreePeooleCostCount(Cost, ServiceFee);
+        }
+
+        //計算每人平均
+        Average = DoAverage(NumberOfPeople, FreeNumberOfPeople, Sum,Need, FreePeopleCost);
+
+        
+        document.getElementById("Sum_Value").value = Sum;
+        Average = CheckEmpty(Average);//check
+        document.getElementById("Average_Value").value = Average;
+        FreePeopleCost = CheckEmpty(FreePeopleCost);//check
+        document.getElementById("FreePeople_Value").value = FreePeopleCost;
+    }
+    //計算總金額
+    function DoSum(Cost, NumberOfPeople, ServiceFee)
+    {
+        return Cost * ((ServiceFee / 100) + 1) * NumberOfPeople;
+    }
+    //計算每人平均
+    function DoAverage(NumberOfPeople,FreeNumberOfPeople, Sum,Need, FreePeopleCost) {
+        if (Need) {
+            return (Sum - (FreePeopleCost * FreeNumberOfPeople)) / (NumberOfPeople - FreeNumberOfPeople);
+        }
+        else
+        {
+            return Sum / (NumberOfPeople - FreeNumberOfPeople);
+        }
+    }
+    //如免費者須負擔服務費則計算
+    function FreePeooleCostCount(Cost, ServiceFee)
+    {
+        return Cost * (ServiceFee / 100);
+    }
+    //檢查空字串
+    function CheckEmpty(CheckValue)
+    {
+        if (CheckValue == null || CheckValue == undefined || CheckValue == '') {
+            return 0;
+        }
+        return CheckValue;
+    }
+</script>

@@ -7,10 +7,10 @@
             TP轉換：
         </div>
         <div class="col-md-3">
-            @Html.TextBox("TPValue",0)
+            @Html.TextBox("TPValue", 0, new { @class = "form-control", style = "width:100%" })
         </div>
         <div class="col-md-3">
-            @Html.TextBox("ConvertResult",0, new{ @readonly="true",@class="form-contrl"})
+            @Html.TextBox("ConvertResult", 0, new { @readonly = "true", @class = "form-control", style = "width:100%" })
         </div>
         <div class="col-md-3">
             <button type="button" onclick="Convert()" class="btn btn-success">轉換</button>
@@ -21,10 +21,10 @@
             次數轉換台幣：
         </div>
         <div class="col-md-3">
-            @Html.TextBox("CountValue",0)
+            @Html.TextBox("CountValue", 0, new { @class = "form-control", style = "width:100%" })
         </div>
         <div class="col-md-3">
-            @Html.TextBox("NTConvertResult",0, new { @readonly = "true", @class = "form-contrl" })
+            @Html.TextBox("NTConvertResult", 0, new { @readonly = "true", @class = "form-control", style = "width:100%" })
         </div>
         <div class="col-md-3">
             <button type="button" onclick="Convert()" class="btn btn-success">轉換</button>

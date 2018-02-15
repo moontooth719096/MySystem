@@ -5,12 +5,35 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Web.Mvc;
 
 namespace MySystem.ViewModels.Calculate
 {
     public class ExchangeRateViewModel
     {
+        public string SelectCurrencyType { get; set; }
+
         public List<ExchangeRateModel> ExchangeRateList;
+
+        /// <summary>
+        /// 貨幣種類
+        /// </summary>
+        public IEnumerable<SelectListItem> CurrencyType_Select
+        {
+            get
+            {
+                List<SelectListItem> mySelectItemList = new List<SelectListItem>();
+                foreach (var data in ExchangeRateList)
+                {
+                    mySelectItemList.Add(new SelectListItem() { Text = data.CurrencyTypeName, Value = data.CashBuyExchangeRate });
+                }
+                if (!string.IsNullOrEmpty(SelectCurrencyType))
+                {
+                    SelectCurrencyType = "0";
+                }
+                return mySelectItemList;
+            }
+        }
 
         public string GetExchangeRate()
         {
