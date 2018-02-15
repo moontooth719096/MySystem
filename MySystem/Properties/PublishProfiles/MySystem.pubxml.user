@@ -16,7 +16,7 @@
       <publishTime>01/05/2018 20:14:46</publishTime>
     </File>
     <File Include="bin/ConnetDB.dll">
-      <publishTime>02/11/2018 22:48:54</publishTime>
+      <publishTime>02/15/2018 15:25:53</publishTime>
     </File>
     <File Include="bin/CSS/MusicPlayer/Images/fastforward.png">
       <publishTime>01/05/2018 20:13:21</publishTime>
@@ -118,7 +118,7 @@
       <publishTime>01/05/2018 20:14:47</publishTime>
     </File>
     <File Include="bin/MySystem.dll">
-      <publishTime>02/11/2018 22:48:55</publishTime>
+      <publishTime>02/15/2018 19:23:40</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>01/05/2018 20:14:51</publishTime>
@@ -846,14 +846,17 @@
     <File Include="Views/Account/LogInPage.cshtml">
       <publishTime>01/07/2018 20:26:45</publishTime>
     </File>
+    <File Include="Views/Calculate/AverageCostSharing.cshtml">
+      <publishTime>02/15/2018 19:01:32</publishTime>
+    </File>
     <File Include="Views/Calculate/ExchangeRate.cshtml">
-      <publishTime>02/11/2018 19:31:52</publishTime>
+      <publishTime>02/15/2018 19:19:25</publishTime>
     </File>
     <File Include="Views/Calculate/TorebaTPConvert.cshtml">
-      <publishTime>02/11/2018 11:22:08</publishTime>
+      <publishTime>02/15/2018 19:06:31</publishTime>
     </File>
     <File Include="Views/Function/MainFunctionAddPage.cshtml">
-      <publishTime>01/05/2018 20:13:22</publishTime>
+      <publishTime>02/15/2018 15:26:01</publishTime>
     </File>
     <File Include="Views/Function/MainFunctionPage.cshtml">
       <publishTime>01/20/2018 16:47:09</publishTime>
