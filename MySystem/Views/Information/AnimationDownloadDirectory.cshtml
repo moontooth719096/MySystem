@@ -1,0 +1,44 @@
+﻿@model MySystem.ViewModels.Information.AnimationDownloadDirectoryViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("AnimationDownloadDirectory", "Information", FormMethod.Post))
+{
+<div class="row">
+    <div class="col-md-3">
+        @Html.DropDownListFor(m => m.SelectName, Model.Animation_Select, new { @class = "form-control", style = "width:auto" })
+    </div>
+    <div class="col-md-3">
+        @Html.TextBoxFor(m => m.SelectPage, new { @class = "form-control"})
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-success">搜尋</button>
+    </div>
+</div>
+}
+<div class="row">
+    <div class="col-md-12">
+        @if (Model.AnimationList != null && Model.AnimationList.Count() > 0)
+        {
+            <table class="table table-striped table-bordered table-hover table-condensed">
+                <thead>
+                    <tr class="bg-success">
+                        <th rowspan="2" style="vertical-align:middle;text-align:center;">
+                            @Html.DisplayNameFor(model => model.AnimationList.First().AnimationName)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var data in Model.AnimationList)
+                    {
+                        <tr>
+                            <td>
+                                <a href=@data.Url>@data.AnimationName</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

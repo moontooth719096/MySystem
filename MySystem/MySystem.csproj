@@ -188,6 +188,7 @@
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\BasePage\HomeController.cs" />
     <Compile Include="Controllers\Calculate\CalculateController.cs" />
+    <Compile Include="Controllers\Information\InformationController.cs" />
     <Compile Include="Controllers\Management\FunctionController.cs" />
     <Compile Include="Controllers\LikeWeb\LikeWebController.cs" />
     <Compile Include="Controllers\Management\ManagementController.cs" />
@@ -199,10 +200,12 @@
     </Compile>
     <Compile Include="Models\Account\UserData.cs" />
     <Compile Include="Models\Calculate\ExchangeRateModel.cs" />
+    <Compile Include="Models\Information\AnimationDownloadDirectoryModel.cs" />
     <Compile Include="Models\Management\CalendarModel.cs" />
     <Compile Include="Models\Management\MainFunctionModel.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="ViewModels\Calculate\ExchangeRateViewModel.cs" />
+    <Compile Include="ViewModels\Information\AnimationDownloadDirectoryViewModel.cs" />
     <Compile Include="ViewModels\Management\CalendarViewModel.cs" />
     <Compile Include="ViewModels\Management\MainFunctionViewModel.cs" />
     <Compile Include="Models\LikeWeb\WebDataModel.cs" />
@@ -456,6 +459,7 @@
     <Content Include="Views\Calculate\TorebaTPConvert.cshtml" />
     <Content Include="Views\Calculate\ExchangeRate.cshtml" />
     <Content Include="Views\Calculate\AverageCostSharing.cshtml" />
+    <Content Include="Views\Information\AnimationDownloadDirectory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

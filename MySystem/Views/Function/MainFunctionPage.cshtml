@@ -1,7 +1,6 @@
 ﻿@model MySystem.ViewModels.Management.MainFunctionViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
 <div class="row col-md-12">
     <div class="panel panel-default">
@@ -56,7 +55,7 @@
                                             </div>
                                         </td>
                                         <td id="@normal" style="width:15%">
-                                            <button type="button" class="btn btn-warning btn-sm" onclick="Edit('@Model.MainFunctionID')">編輯</button>
+                                            <button id="modal-Edit" href="#modal-container-Edit" role="button" data-toggle="modal" class="btn btn-warning btn-sm" onclick="Edit('@Model.MainFunctionID')">編輯</button>
                                             <button name="Active" type="submit" class="btn btn-danger btn-sm" value="Delete">刪除</button>
                                         </td>
                                         <td id="@ActionEdit" style="display:none;width:15%">
@@ -72,7 +71,46 @@
             </div>
         </div>
     </div>
+    @*編輯視窗*@
+    <div class="row">
+        <div class="col-md-12">
+            <a id="modal-Edit" href="#modal-container-Edit" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+
+            <div class="modal fade" id="modal-container-Edit" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                ×
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                編輯主功能名稱
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            主功能名稱：@Html.TextBoxFor(m => m.EditName)
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                                Save changes
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 </div>
+
+
 
 <script>
    function hide_tr() {
