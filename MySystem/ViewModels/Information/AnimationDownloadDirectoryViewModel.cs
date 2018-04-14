@@ -43,14 +43,13 @@ namespace MySystem.ViewModels.Information
         public void SetAnimationALL()
         {
             SelectAnimation = new List<string>();
-            SelectAnimation.Add("刻刻");
-            SelectAnimation.Add("魔法使的新娘");
             SelectAnimation.Add("BEATLESS");
             SelectAnimation.Add("皇帝聖印戰記");
-            SelectAnimation.Add("龙珠");
             SelectAnimation.Add("黑色五葉草");
-            SelectAnimation.Add("龍王的工作");
-            SelectAnimation.Add("紫羅蘭永恆花園");
+            SelectAnimation.Add("東京喰種re");
+            SelectAnimation.Add("食戟之靈餐之皿");
+            SelectAnimation.Add("我的英雄學院");
+            SelectAnimation.Add("命運石之門");
         }
 
         public void SetNowselect()
