@@ -50,6 +50,7 @@ namespace MySystem.ViewModels.Information
             SelectAnimation.Add("食戟之靈餐之皿");
             SelectAnimation.Add("我的英雄學院");
             SelectAnimation.Add("命運石之門");
+            SelectAnimation.Add("刀剑神域");
         }
 
         public void SetNowselect()
