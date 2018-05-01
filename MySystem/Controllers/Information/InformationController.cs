@@ -12,7 +12,7 @@ namespace MySystem.Controllers
             string message = string.Empty;
             AnimationDownloadDirectoryViewModel model = new AnimationDownloadDirectoryViewModel();
             model.init();
-            model.SetAnimationALL();
+            //model.SetAnimationALL();
             model.GetAnimationList();
             return View(model);
         }

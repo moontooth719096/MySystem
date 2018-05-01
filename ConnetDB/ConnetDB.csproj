@@ -129,6 +129,8 @@
     <Compile Include="MySystemDB\MainFunctionDB.cs" />
     <Compile Include="MySystemDB\SQLParameter.cs" />
     <Compile Include="MySystemDB\SubFunctionDB.cs" />
+    <Compile Include="MySystemDB\TB_AnimationList.cs" />
+    <Compile Include="MySystemDB\MySystemDB_Base.cs" />
     <Compile Include="MySystemDB\WebDataDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

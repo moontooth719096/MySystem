@@ -1,7 +1,9 @@
-﻿using HtmlAgilityPack;
+﻿using ConnetDB.MySystemDB;
+using HtmlAgilityPack;
 using MySystem.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -17,6 +19,10 @@ namespace MySystem.ViewModels.Information
         public List<string> SelectAnimation { get; set; }
 
         public List<AnimationDownloadDirectoryModel> AnimationList;
+
+        //DB
+        TB_AnimationList AnimationListDB;
+
         /// <summary>
         /// 貨幣種類
         /// </summary>
@@ -26,10 +32,11 @@ namespace MySystem.ViewModels.Information
             {
                 List<SelectListItem> mySelectItemList = new List<SelectListItem>();
                 mySelectItemList.Add(new SelectListItem() { Text = "ALL", Value = "ALL" });
-                SetAnimationALL();
-                foreach (var data in SelectAnimation)
+                DataTable dt =GetAnimationALL();
+                //SetAnimationALL(dt);
+                foreach (DataRow dr in dt.Rows)
                 {
-                    mySelectItemList.Add(new SelectListItem() { Text = data, Value = data });
+                    mySelectItemList.Add(new SelectListItem() { Text = dr["AnimationName"].ToString(), Value = dr["AnimationName"].ToString() });
                 }
                 return mySelectItemList;
             }
@@ -39,19 +46,27 @@ namespace MySystem.ViewModels.Information
             this.SelectPage = this.SelectPage == 0 ? 10 : this.SelectPage;
             this.SelectName = string.IsNullOrEmpty(this.SelectName) ? "ALL" : this.SelectName;
         }
-
-        public void SetAnimationALL()
+        private DataTable GetAnimationALL()
         {
-            SelectAnimation = new List<string>();
-            SelectAnimation.Add("BEATLESS");
-            SelectAnimation.Add("皇帝聖印戰記");
-            SelectAnimation.Add("黑色五葉草");
-            SelectAnimation.Add("東京喰種re");
-            SelectAnimation.Add("食戟之靈餐之皿");
-            SelectAnimation.Add("我的英雄學院");
-            SelectAnimation.Add("命運石之門");
-            SelectAnimation.Add("刀剑神域");
+            AnimationListDB = new TB_AnimationList();
+            return AnimationListDB.getAnimationList();
         }
+        //public void SetAnimationALL(DataTable dt)
+        //{
+        //    SelectAnimation = new List<string>();
+        //    foreach (DataRow dr in dt.Rows)
+        //    {
+        //        SelectAnimation.Add(dr["AnimationName"].ToString());
+        //    }
+        //    //SelectAnimation.Add("BEATLESS");
+        //    //SelectAnimation.Add("皇帝聖印戰記");
+        //    //SelectAnimation.Add("黑色五葉草");
+        //    //SelectAnimation.Add("東京喰種re");
+        //    //SelectAnimation.Add("食戟之靈餐之皿");
+        //    //SelectAnimation.Add("我的英雄學院");
+        //    //SelectAnimation.Add("命運石之門");
+        //    //SelectAnimation.Add("刀剑神域");
+        //}
 
         public void SetNowselect()
         {
@@ -60,11 +75,6 @@ namespace MySystem.ViewModels.Information
                 SelectAnimation = new List<string>();
                 SelectAnimation.Add(SelectName);
             }
-            else
-            {
-                SetAnimationALL();
-            }
-            
         }
 
         public string GetAnimationList()
